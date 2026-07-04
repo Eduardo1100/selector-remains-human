@@ -1215,3 +1215,34 @@ Conclusion:
 Updated paper-level framing:
 
 > The human signal is carried by domain construction. The selector frontier remains human; the engineering leverage is in constructing useful D, not eliminating human judgment.
+
+## Next missing cell: different-prompt test-label domains
+
+The critic pointed out that the leakage-reduced train-domain probe changed two factors at once:
+
+1. label source:
+   same-test labels -> training labels
+
+2. prompt match:
+   same prompt -> nearest different prompts by embedding similarity
+
+Therefore the collapse of train-built domains could reflect either:
+
+- removal of same-test label ecology; or
+- poor / insufficient prompt matching when domains are drawn from different prompts.
+
+The missing cell is:
+
+- score test examples using domains built from other test prompts' chosen/rejected stories;
+- exclude the same prompt;
+- retrieve nearest different test prompts by MiniLM prompt similarity;
+- build D_preferred from chosen stories of those retrieved test prompts;
+- build D_rejected from rejected stories of those retrieved test prompts.
+
+This is still transductive and uses test labels, but removes the literal same-prompt domain ecology.
+
+Interpretation:
+
+- If different-prompt test-label domains collapse near the train-domain result, the mechanism is prompt-local label ecology.
+- If they stay high, then test-label source rather than prompt-locality is doing more work.
+- If they land in the middle, the boundary is partly cross-prompt but much weaker than same-prompt transductive domains.
