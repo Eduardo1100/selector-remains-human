@@ -1246,3 +1246,92 @@ Interpretation:
 - If different-prompt test-label domains collapse near the train-domain result, the mechanism is prompt-local label ecology.
 - If they stay high, then test-label source rather than prompt-locality is doing more work.
 - If they land in the middle, the boundary is partly cross-prompt but much weaker than same-prompt transductive domains.
+
+## Cross-prompt test-label domain probe
+
+We ran the missing cell identified by the critic:
+
+- score rows: exact 1,155 rows from test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain10
+- source domains: other test prompts
+- same prompt excluded
+- labels used for domains: test chosen/rejected labels
+- retrieval: nearest different test prompts by MiniLM prompt similarity
+- embedding model: sentence-transformers/all-MiniLM-L6-v2
+- top_source_prompts = 50
+- max_domain = 10
+- min_domain = 2
+- n_boot = 5,000
+- seed = 123
+
+This tests whether the train-domain collapse was due to training-vs-test label source or due to loss of same-prompt ecology.
+
+### Main exact-overlap results
+
+Surface baseline:
+
+- surface_format:
+  60.78%, CI [57.92%, 63.55%]
+
+Cross-prompt test-label domain-only:
+
+- mean_cross_prompt_test_domain_sign_rule/logistic:
+  52.99%, CI [50.13%, 55.85%]
+- top5_cross_prompt_test_domain_sign_rule/logistic:
+  52.21%, CI [49.35%, 55.15%]
+- top2_cross_prompt_test_domain_sign_rule/logistic:
+  51.34%, CI [48.48%, 54.20%]
+- top3_cross_prompt_test_domain_sign_rule/logistic:
+  51.34%, CI [48.57%, 54.20%]
+- max_cross_prompt_test_domain_logistic:
+  50.91%, CI [48.05%, 53.77%]
+- max_cross_prompt_test_domain_sign_rule:
+  50.82%, CI [47.97%, 53.68%]
+
+Surface + cross-prompt test-label domain:
+
+- max_surface_plus_cross_prompt_test_domain:
+  61.39%, CI [58.53%, 64.24%]
+- top3_surface_plus_cross_prompt_test_domain:
+  61.04%, CI [58.27%, 63.81%]
+- mean_surface_plus_cross_prompt_test_domain:
+  60.95%, CI [58.18%, 63.72%]
+- top2_surface_plus_cross_prompt_test_domain:
+  60.69%, CI [57.92%, 63.46%]
+- top5_surface_plus_cross_prompt_test_domain:
+  60.52%, CI [57.75%, 63.38%]
+
+Paired deltas over surface:
+
+- max_surface_plus_cross_prompt_test_domain - surface:
+  +0.61 points, CI [-0.87, +2.08]
+- top3_surface_plus_cross_prompt_test_domain - surface:
+  +0.26 points, CI [-0.95, +1.47]
+- mean_surface_plus_cross_prompt_test_domain - surface:
+  +0.17 points, CI [-1.47, +1.82]
+- top2_surface_plus_cross_prompt_test_domain - surface:
+  -0.09 points, CI [-1.39, +1.21]
+- top5_surface_plus_cross_prompt_test_domain - surface:
+  -0.26 points, CI [-1.47, +0.95]
+
+### Interpretation
+
+The cross-prompt test-label cell collapses near the train-domain result. This means the train-domain collapse was not merely a train-vs-test label-source issue.
+
+The strong same-test result requires prompt-local label ecology:
+
+- same-prompt + test labels:
+  strong, roughly 87–88%
+- same-prompt + random/no labels:
+  chance, roughly 49%
+- different-prompt + train labels:
+  weak, roughly 53%
+- different-prompt + test labels:
+  weak, roughly 53%
+
+Conclusion:
+
+The LitBench positive result is best framed as transductive same-prompt label-defined class structure. Directional per-instance operators can detect this structure, and centroid pooling destroys it. But the boundary does not survive when domains are drawn from different prompts, even if the domain labels come from the test set.
+
+Paper wording:
+
+> The boundary is both prompt-local and label-defined. Neither prompt match alone nor preference labels from different prompts reproduce the strong effect. The 87–88% result is therefore a transductive same-prompt class-structure demonstration, not a transferable value model.
