@@ -1,0 +1,3 @@
+[tools]
+"github:tectonic-typesetting/tectonic" = { version = "0.16.9", version_prefix = "tectonic@", matching = "linux-gnu" }
+pandoc = "3.10"

@@ -27,3 +27,6 @@ results/litbench/litbench_nll_scores_*.csv
 
 # Reproducible LitBench model prediction intermediates
 results/litbench/litbench_combined_model_predictions_*.csv
+
+__pycache__/
+*.py[cod]
