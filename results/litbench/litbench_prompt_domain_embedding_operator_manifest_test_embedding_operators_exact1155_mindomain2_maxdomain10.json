@@ -1,0 +1,30 @@
+{
+  "analysis": "Crossed embedding operator control for LitBench preference-labeled domains",
+  "dataset": "SAA-Lab/LitBench-Test-IDs-Complete",
+  "surface_tag": "test_ids_complete",
+  "tag": "test_embedding_operators_exact1155_mindomain2_maxdomain10",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "min_domain": 2,
+  "max_domain": 10,
+  "limit": null,
+  "row_filter_domain_tag": "test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain10",
+  "n_eligible_rows": 1155,
+  "operators": [
+    "knn3",
+    "knn5",
+    "max",
+    "mean",
+    "top2",
+    "top3",
+    "top5"
+  ],
+  "n_splits": 5,
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": {
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_embedding_operator_scores_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv",
+    "models": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_embedding_operator_models_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_embedding_operator_deltas_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv",
+    "continuous": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_embedding_operator_continuous_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv"
+  }
+}

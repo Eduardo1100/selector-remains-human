@@ -1,0 +1,10 @@
+Readout,Controls,Observed ρ,95% CI,Bootstrap n,Interpretation
+Compression,Other human targets,+0.267,"[-0.050, +0.495]",5000,Positive point estimate; CI includes zero.
+Embedding,Other human targets,+0.138,"[-0.147, +0.408]",5000,Positive point estimate; CI includes zero.
+TF-IDF,Other human targets,+0.096,"[-0.193, +0.337]",5000,Positive point estimate; CI includes zero.
+Compression,Other human targets + surface,+0.209,"[-0.084, +0.434]",5000,Positive point estimate; CI includes zero.
+Embedding,Other human targets + surface,+0.189,"[-0.159, +0.488]",5000,Positive point estimate; CI includes zero.
+TF-IDF,Other human targets + surface,+0.140,"[-0.184, +0.411]",5000,Positive point estimate; CI includes zero.
+Compression,Other human + surface + NLL,+0.286,"[-0.074, +0.503]",5000,Positive point estimate; CI includes zero.
+Embedding,Other human + surface + NLL,+0.273,"[-0.175, +0.565]",5000,Positive point estimate; CI includes zero.
+TF-IDF,Other human + surface + NLL,+0.247,"[-0.179, +0.510]",5000,Positive point estimate; CI includes zero.

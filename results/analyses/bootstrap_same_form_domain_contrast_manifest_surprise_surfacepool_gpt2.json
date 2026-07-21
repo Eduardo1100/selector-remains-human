@@ -1,0 +1,32 @@
+{
+  "analysis": "same_form_prefcontrast_item_bootstrap",
+  "observer": "gpt2",
+  "human_label": "Surprise",
+  "null_label": "Surprise_surfacepool",
+  "metric": "v_pref_struct",
+  "n_boot": 5000,
+  "seed": 123,
+  "tag": "surprise_surfacepool_gpt2",
+  "common_controls": [
+    "matchedctrl"
+  ],
+  "inputs": [
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_matchedctrl_frac33_seed17_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_matchedctrl_frac33_seed18_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_matchedctrl_frac33_seed19_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_matchedctrl_frac33_seed20_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_matchedctrl_frac33_seed21_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_surfacepool_matchedctrl_frac33_seed17_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_surfacepool_matchedctrl_frac33_seed18_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_surfacepool_matchedctrl_frac33_seed19_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_surfacepool_matchedctrl_frac33_seed20_dn8.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores/vscore_gpt2_prefcontrast_chaudhuri_Surprise_surfacepool_matchedctrl_frac33_seed21_dn8.csv"
+  ],
+  "outputs": [
+    "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_same_form_domain_contrast_observed_surprise_surfacepool_gpt2.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_same_form_domain_contrast_summary_surprise_surfacepool_gpt2.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_same_form_domain_contrast_samples_surprise_surfacepool_gpt2.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_same_form_domain_contrast_manifest_surprise_surfacepool_gpt2.json"
+  ],
+  "interpretation_note": "Both sides use the same prefcontrast metric. This tests human-labeled contrastive domains against a nonhuman contrastive domain artifact, avoiding the previous v_pref_struct-vs-v_struct mixed-form contrast."
+}

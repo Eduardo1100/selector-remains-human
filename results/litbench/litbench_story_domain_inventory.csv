@@ -1,0 +1,4 @@
+dataset_key,n_story_rows,n_unique_prompts,max_stories_per_prompt,n_prompts_ge_4_stories,n_prompts_ge_6_stories,n_prompts_ge_10_stories,mean_story_words,median_story_words,mean_story_chars,median_story_chars
+rationales,87472,12409,408,6454,4268,2288,541.9915401499909,485.0,2998.386557984269,2684.0
+test_ids_complete,4960,971,54,491,304,125,559.0328629032258,503.0,3097.0183467741936,2794.5
+train,87654,12419,408,6460,4271,2290,541.2476783717799,484.0,2994.30734478746,2680.0

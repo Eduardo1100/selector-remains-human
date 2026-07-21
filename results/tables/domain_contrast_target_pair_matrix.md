@@ -1,0 +1,11 @@
+| pool_target | target | supervised_rho | mean_delta | resolved_pattern | min_ci_low | max_ci_high |
+| --- | --- | --- | --- | --- | --- | --- |
+| Aesthetic_Appeal | Aesthetic_Appeal | +0.475 | +0.586 | 4/4 | +0.111 | +1.081 |
+| Aesthetic_Appeal | Creativity | +0.378 | +0.425 | 2/4 | -0.188 | +1.037 |
+| Aesthetic_Appeal | Surprise | +0.377 | +0.538 | 2/4 | -0.100 | +1.096 |
+| Creativity | Aesthetic_Appeal | +0.346 | +0.456 | 1/4 | -0.069 | +1.001 |
+| Creativity | Creativity | +0.341 | +0.388 | 2/4 | -0.312 | +1.064 |
+| Creativity | Surprise | +0.295 | +0.456 | 2/4 | -0.209 | +1.043 |
+| Surprise | Aesthetic_Appeal | +0.259 | +0.369 | 1/4 | -0.124 | +0.892 |
+| Surprise | Creativity | +0.287 | +0.335 | 2/4 | -0.340 | +0.983 |
+| Surprise | Surprise | +0.418 | +0.579 | 3/4 | -0.073 | +1.119 |

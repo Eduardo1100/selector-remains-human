@@ -1,0 +1,6 @@
+tag,quantity,mean,ci95_low,ci95_high,p_le_zero,p_ge_zero,n,n_boot
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain3,domain_contrast_delta,0.4198345773843954,0.3765000222556758,0.4636013657745434,0.0,1.0,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain3,delta_chosen_domain,0.20342835620970268,0.1768032695404637,0.23065848370436118,0.0,1.0,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain3,delta_rejected_domain,-0.2164062211746928,-0.24751321097413242,-0.18499984367458963,1.0,0.0,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain3,chosen_domain_specificity,0.19676950735404206,0.1675940377454436,0.22601434343208224,0.0,1.0,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain3,rejected_domain_specificity,-0.22306507003035334,-0.25587875645949737,-0.19142076881673636,1.0,0.0,1155,5000

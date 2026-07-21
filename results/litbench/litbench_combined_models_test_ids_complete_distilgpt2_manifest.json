@@ -1,0 +1,14 @@
+{
+  "analysis": "cross-validated logistic pairwise models",
+  "surface_tag": "test_ids_complete",
+  "nll_tag": "test_ids_complete_distilgpt2",
+  "tag": "test_ids_complete_distilgpt2",
+  "n_splits": 5,
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": {
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_combined_models_test_ids_complete_distilgpt2.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_combined_model_deltas_test_ids_complete_distilgpt2.csv",
+    "predictions": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_combined_model_predictions_test_ids_complete_distilgpt2.csv"
+  }
+}

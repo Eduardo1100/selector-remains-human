@@ -1,0 +1,5 @@
+target,domain_variant,control_variant,generic_metric,analysis,n_runs,observed_mean_rho,boot_mean,boot_std,ci95_low,ci95_high,p_boot_le_zero,p_boot_ge_zero,n_boot,ci_excludes_zero
+Aesthetic_Appeal,accessible,matchedctrl,v_struct,generic_absolute_summary,3,-0.07191435632116722,-0.0714308726029795,0.18964909911651784,-0.4396151562541436,0.30366877168828793,0.6466,0.3534,5000,False
+Aesthetic_Appeal,accessible,wordctrl,v_struct,generic_absolute_summary,3,-0.08997876205578022,-0.08826842227089038,0.17631485071565658,-0.4301357524944874,0.2582778050230985,0.689,0.311,5000,False
+Aesthetic_Appeal,formal,matchedctrl,v_struct,generic_absolute_summary,3,-0.24728068942654335,-0.24356934757250523,0.16438677600252077,-0.5603007900023538,0.0906789270301283,0.9228,0.0772,5000,False
+Aesthetic_Appeal,formal,wordctrl,v_struct,generic_absolute_summary,3,-0.03158052879020231,-0.03138641628450892,0.17050861860398345,-0.3624740491992739,0.29298250646047375,0.5712,0.4288,5000,False

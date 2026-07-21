@@ -1,0 +1,16 @@
+{
+  "analysis": "prompt-conditioned compression-progress V",
+  "dataset": "SAA-Lab/LitBench-Test-IDs-Complete",
+  "tag": "test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3",
+  "model": "distilgpt2",
+  "domain_mode": "other_chosen",
+  "min_domain": 2,
+  "max_domain": 3,
+  "max_context_tokens": 512,
+  "max_target_tokens": 384,
+  "outputs": {
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_conditioned_v_scores_test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3.csv",
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_conditioned_v_summary_test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3.csv"
+  },
+  "interpretation": "V(candidate) = prompt_only_domain_avg_nll - candidate_conditioned_domain_avg_nll. Prediction is chosen if V(chosen) > V(rejected). Domain is selected from same-prompt held-out stories excluding current pair."
+}

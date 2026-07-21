@@ -1,0 +1,29 @@
+{
+  "target": "Aesthetic_Appeal",
+  "metric": "v_pref_struct",
+  "observers": [
+    "gpt2",
+    "gpt2-medium"
+  ],
+  "n_boot": 5000,
+  "seed": 123,
+  "tag": "aesthetic_observer",
+  "input_rows": 360,
+  "input_files": [
+    "vscore_gpt2-medium_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed17_dn8.csv",
+    "vscore_gpt2-medium_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed18_dn8.csv",
+    "vscore_gpt2-medium_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed19_dn8.csv",
+    "vscore_gpt2-medium_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed20_dn8.csv",
+    "vscore_gpt2-medium_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed21_dn8.csv",
+    "vscore_gpt2_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed17_dn8.csv",
+    "vscore_gpt2_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed18_dn8.csv",
+    "vscore_gpt2_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed19_dn8.csv",
+    "vscore_gpt2_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed20_dn8.csv",
+    "vscore_gpt2_prefcontrast_chaudhuri_Aesthetic_Appeal_matchedctrl_frac33_seed21_dn8.csv"
+  ],
+  "outputs": [
+    "bootstrap_observer_family_observed_aesthetic_observer.csv",
+    "bootstrap_observer_family_samples_aesthetic_observer.csv",
+    "bootstrap_observer_family_summary_aesthetic_observer.csv"
+  ]
+}

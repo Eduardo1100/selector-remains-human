@@ -1,0 +1,20 @@
+{
+  "analysis": "TF-IDF and embedding kernels on identical preferred/rejected same-prompt pools",
+  "dataset": "SAA-Lab/LitBench-Test-IDs-Complete",
+  "surface_tag": "test_ids_complete",
+  "tag": "test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3",
+  "min_domain": 2,
+  "max_domain": 3,
+  "tfidf_max_features": 50000,
+  "tfidf_min_df": 2,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "limit": null,
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": {
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_kernel_scores_test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3.csv",
+    "models": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_kernel_models_test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_kernel_deltas_test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3.csv",
+    "continuous": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_kernel_continuous_test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3.csv"
+  }
+}

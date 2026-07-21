@@ -1,0 +1,6 @@
+tag,model,features,accuracy,ci95_low,ci95_high,n,n_boot
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,v_only_logistic,"[""prompt_conditioned_v""]",0.6702702702702703,0.6447876447876448,0.694980694980695,1295,5000
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_plus_v_and_domain_meta,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count"", ""prompt_conditioned_v""]",0.6687258687258687,0.6432432432432432,0.694980694980695,1295,5000
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_plus_v,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count"", ""prompt_conditioned_v""]",0.6687258687258687,0.6432432432432432,0.694980694980695,1295,5000
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_format,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count""]",0.6046332046332046,0.5768339768339769,0.6308880308880309,1295,5000
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,v_only_sign_rule,"[""chosen_gain > rejected_gain""]",0.322007722007722,0.2965250965250965,0.3474903474903475,1295,5000

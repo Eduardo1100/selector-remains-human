@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "purpose": "Canonical Figure 1 data selected from tracked LitBench summaries.",
+  "canonical_surface_note": "The surface baseline is selected from the exact-overlap embedding-operator summary (0.607792). The conditional-LM summary's 0.602597 surface row is a separate cross-validation run and is not interchangeable.",
+  "rows": [
+    {
+      "key": "surface_baseline",
+      "panel": "A",
+      "label": "Surface-format baseline",
+      "display_label": "Surface-format baseline",
+      "source_path": "results/litbench/litbench_prompt_domain_embedding_operator_models_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv",
+      "filters": {
+        "operator": "mean",
+        "model": "surface_format"
+      },
+      "accuracy": 0.6077922077922078,
+      "ci95_low": 0.5792207792207792,
+      "ci95_high": 0.6354978354978355,
+      "n": 1155,
+      "operator": "5-fold surface logistic",
+      "label_source": "none",
+      "prompt_relation": "n/a",
+      "transductive_inductive_status": "inductive feature baseline"
+    },
+    {
+      "key": "conditional_lm",
+      "panel": "A",
+      "label": "Conditional cross-predictability",
+      "display_label": "Conditional cross-predictability\n(same prompt, preference labels)",
+      "source_path": "results/litbench/litbench_prompt_v_domain_contrast_models_test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain10.csv",
+      "filters": {
+        "model": "domain_contrast_sign_rule"
+      },
+      "accuracy": 0.7974025974025974,
+      "ci95_low": 0.7740259740259741,
+      "ci95_high": 0.8207792207792208,
+      "n": 1155,
+      "operator": "conditional cross-predictability",
+      "label_source": "test preferences",
+      "prompt_relation": "same prompt",
+      "transductive_inductive_status": "transductive"
+    },
+    {
+      "key": "minilm_centroid",
+      "panel": "A",
+      "label": "MiniLM centroid logistic",
+      "display_label": "MiniLM centroid logistic\n(same prompt, preference labels)",
+      "source_path": "results/litbench/litbench_prompt_domain_kernel_models_test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3.csv",
+      "filters": {
+        "kernel": "embedding",
+        "model": "domain_specificity_logistic"
+      },
+      "accuracy": 0.48917748917748916,
+      "ci95_low": 0.46145021645021644,
+      "ci95_high": 0.5177489177489177,
+      "n": 1155,
+      "operator": "centroid logistic",
+      "label_source": "test preferences",
+      "prompt_relation": "same prompt",
+      "transductive_inductive_status": "transductive control"
+    },
+    {
+      "key": "directional_top3",
+      "panel": "A",
+      "label": "MiniLM directional top-3",
+      "display_label": "MiniLM directional top-3\n(same prompt, preference labels)",
+      "source_path": "results/litbench/litbench_prompt_domain_embedding_operator_models_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv",
+      "filters": {
+        "operator": "top3",
+        "model": "top3_domain_contrast_sign_rule"
+      },
+      "accuracy": 0.8770562770562771,
+      "ci95_low": 0.858008658008658,
+      "ci95_high": 0.8961038961038961,
+      "n": 1155,
+      "operator": "directional top-3",
+      "label_source": "test preferences",
+      "prompt_relation": "same prompt",
+      "transductive_inductive_status": "transductive probe"
+    },
+    {
+      "key": "same_prompt_labels",
+      "panel": "B",
+      "label": "Same-prompt preference labels",
+      "display_label": "Same-prompt preference labels\nMiniLM top-3, transductive",
+      "source_path": "results/litbench/litbench_prompt_domain_embedding_operator_models_test_embedding_operators_exact1155_mindomain2_maxdomain10.csv",
+      "filters": {
+        "operator": "top3",
+        "model": "top3_domain_contrast_sign_rule"
+      },
+      "accuracy": 0.8770562770562771,
+      "ci95_low": 0.858008658008658,
+      "ci95_high": 0.8961038961038961,
+      "n": 1155,
+      "operator": "MiniLM top-3, transductive",
+      "label_source": "test preferences",
+      "prompt_relation": "same prompt",
+      "transductive_inductive_status": "transductive probe"
+    },
+    {
+      "key": "same_prompt_random",
+      "panel": "B",
+      "label": "Same-prompt random domains",
+      "display_label": "Same-prompt random domains\nconditional cross-predictability",
+      "source_path": "results/litbench/litbench_prompt_v_random_split_models_test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3.csv",
+      "filters": {
+        "model": "random_domain_contrast_sign_rule"
+      },
+      "accuracy": 0.4892334194659776,
+      "ci95_low": 0.4608096468561585,
+      "ci95_high": 0.5185185185185185,
+      "n": 1161,
+      "operator": "conditional cross-predictability",
+      "label_source": "random split",
+      "prompt_relation": "same prompt",
+      "transductive_inductive_status": "prompt-only control"
+    },
+    {
+      "key": "cross_prompt_train",
+      "panel": "B",
+      "label": "Cross-prompt train labels",
+      "display_label": "Cross-prompt train labels\nMiniLM top-5",
+      "source_path": "results/litbench/litbench_train_domain_embedding_models_train_domain_embedding_exact1155_min2_max10_top50.csv",
+      "filters": {
+        "operator": "top5",
+        "model": "top5_train_domain_sign_rule"
+      },
+      "accuracy": 0.5307359307359307,
+      "ci95_low": 0.5021645021645021,
+      "ci95_high": 0.5593073593073593,
+      "n": 1155,
+      "operator": "MiniLM top-5",
+      "label_source": "train preferences",
+      "prompt_relation": "different/similar prompts",
+      "transductive_inductive_status": "inductive cross-prompt"
+    },
+    {
+      "key": "cross_prompt_test",
+      "panel": "B",
+      "label": "Cross-prompt test labels",
+      "display_label": "Cross-prompt test labels\nMiniLM mean",
+      "source_path": "results/litbench/litbench_cross_prompt_test_domain_embedding_models_cross_prompt_test_domain_embedding_exact1155_min2_max10_top50.csv",
+      "filters": {
+        "operator": "mean",
+        "model": "mean_cross_prompt_test_domain_sign_rule"
+      },
+      "accuracy": 0.5298701298701298,
+      "ci95_low": 0.5012987012987012,
+      "ci95_high": 0.5584632034632031,
+      "n": 1155,
+      "operator": "MiniLM mean",
+      "label_source": "test preferences",
+      "prompt_relation": "different/similar prompts",
+      "transductive_inductive_status": "transductive cross-prompt"
+    }
+  ]
+}

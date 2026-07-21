@@ -1,0 +1,17 @@
+{
+  "script": "62_bootstrap_domain_contrast.py",
+  "target": "Creativity",
+  "pool_target": "Aesthetic_Appeal",
+  "generic_metric": "v_struct",
+  "supervised_metric": "v_pref_struct",
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": [
+    "bootstrap_domain_contrast_observed_pool_aesthetic_eval_creativity.csv",
+    "bootstrap_domain_contrast_samples_pool_aesthetic_eval_creativity.csv",
+    "bootstrap_domain_contrast_summary_pool_aesthetic_eval_creativity.csv",
+    "bootstrap_generic_absolute_observed_pool_aesthetic_eval_creativity.csv",
+    "bootstrap_generic_absolute_samples_pool_aesthetic_eval_creativity.csv",
+    "bootstrap_generic_absolute_summary_pool_aesthetic_eval_creativity.csv"
+  ]
+}

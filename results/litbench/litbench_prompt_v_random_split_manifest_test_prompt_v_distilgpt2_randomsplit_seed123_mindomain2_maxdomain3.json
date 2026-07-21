@@ -1,0 +1,23 @@
+{
+  "analysis": "same-form nonhuman random pool split control for prompt-conditioned V",
+  "dataset": "SAA-Lab/LitBench-Test-IDs-Complete",
+  "surface_tag": "test_ids_complete",
+  "tag": "test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3",
+  "model": "distilgpt2",
+  "min_domain": 2,
+  "max_domain": 3,
+  "max_context_tokens": 512,
+  "max_target_tokens": 384,
+  "n_total_rows": 2480,
+  "n_eligible_rows": 1161,
+  "n_skipped_rows": 1319,
+  "seed": 123,
+  "n_boot": 5000,
+  "outputs": {
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_random_split_scores_test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3.csv",
+    "models": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_random_split_models_test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_random_split_deltas_test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3.csv",
+    "continuous": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_random_split_continuous_test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3.csv"
+  },
+  "interpretation": "Random same-prompt pools A/B replace preference-defined chosen/rejected pools. If random domain contrast predicts preference strongly, prior preferred/rejected contrast may reflect generic within-class geometry. If random split collapses toward chance, preference-labeled domain construction carries signal."
+}

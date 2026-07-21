@@ -1,0 +1,33 @@
+{
+  "analysis": "Label-leakage-reduced train-domain embedding probe",
+  "train_dataset": "SAA-Lab/LitBench-Train-Complete",
+  "train_cache": "results/litbench/litbench_train_cached.csv",
+  "test_dataset": "SAA-Lab/LitBench-Test-IDs-Complete",
+  "test_cache": null,
+  "surface_tag": "test_ids_complete",
+  "tag": "train_domain_embedding_min2_max10_top50",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "max_train_pairs": null,
+  "limit_test": null,
+  "top_train_pairs": 50,
+  "min_domain": 2,
+  "max_domain": 10,
+  "n_scores_rows": 12400,
+  "n_unique_test_rows": 2480,
+  "operators": [
+    "max",
+    "mean",
+    "top2",
+    "top3",
+    "top5"
+  ],
+  "n_splits": 5,
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": {
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_train_domain_embedding_scores_train_domain_embedding_min2_max10_top50.csv",
+    "models": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_train_domain_embedding_models_train_domain_embedding_min2_max10_top50.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_train_domain_embedding_deltas_train_domain_embedding_min2_max10_top50.csv",
+    "continuous": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_train_domain_embedding_continuous_train_domain_embedding_min2_max10_top50.csv"
+  }
+}

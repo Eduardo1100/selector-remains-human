@@ -1,0 +1,2 @@
+observer,human_label,null_label,control,metric,n_items,observed_human_rho,observed_null_rho,observed_diff,n_human_files,n_null_files
+gpt2-medium,Surprise,Surprise_surfacepool,matchedctrl,v_pref_struct,36,0.49707045883746737,0.4553474462303846,0.04172301260708278,5,5

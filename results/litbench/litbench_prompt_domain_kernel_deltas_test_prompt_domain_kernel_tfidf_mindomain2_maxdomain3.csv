@@ -1,0 +1,5 @@
+tag,kernel,model_a,model_b,delta_accuracy,delta_ci95_low,delta_ci95_high,p_delta_le_zero,p_delta_ge_zero
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,domain_contrast_sign_rule,surface_format,-0.4831168831168831,-0.5168831168831168,-0.4484848484848485,1.0,0.0
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,domain_specificity_logistic,surface_format,-0.09177489177489177,-0.1316017316017316,-0.05194805194805195,1.0,0.0
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,surface_plus_domain_specificity,surface_format,0.004329004329004329,-0.005194805194805195,0.013852813852813853,0.218,0.8374
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,surface_plus_domain_specificity,domain_specificity_logistic,0.09610389610389611,0.05714285714285714,0.13506493506493505,0.0,1.0

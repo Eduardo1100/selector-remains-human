@@ -1,0 +1,17 @@
+{
+  "analysis": "Preferred-domain minus rejected-domain prompt-conditioned V contrast",
+  "chosen_tag": "test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain6",
+  "rejected_tag": "test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain6",
+  "surface_tag": "test_ids_complete",
+  "tag": "test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6",
+  "n_rows_overlap": 1155,
+  "n_splits": 5,
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": {
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_domain_contrast_models_test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_domain_contrast_deltas_test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6.csv",
+    "continuous": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_domain_contrast_continuous_test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6.csv",
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_domain_contrast_scores_test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6.csv"
+  }
+}

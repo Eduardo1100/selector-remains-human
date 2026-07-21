@@ -1,0 +1,8 @@
+{
+  "dataset": "SAA-Lab/LitBench-Train",
+  "analysis": "surface baselines for chosen-vs-rejected pair prediction",
+  "outputs": [
+    "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_train_surface_features.csv",
+    "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_train_surface_baselines.csv"
+  ]
+}

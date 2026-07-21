@@ -1,0 +1,2 @@
+n_items,observed_human_rho,observed_null_rho,observed_diff,boot_mean_diff,boot_std_diff,ci95_low,ci95_high,p_boot_le_zero,p_boot_ge_zero,n_boot,ci_excludes_zero,max_target_value_diff_between_inputs,observer,human_label,null_label,control,metric,n_human_files,n_null_files,analysis
+36,0.49707045883746737,0.4553474462303846,0.04172301260708278,0.04044148270239506,0.09933883111977357,-0.15504923751425242,0.24266884707400682,0.3358,0.6652,5000,False,0.0,gpt2-medium,Surprise,Surprise_surfacepool,matchedctrl,v_pref_struct,5,5,same_form_prefcontrast_item_bootstrap

@@ -1,0 +1,14 @@
+{
+  "analysis": "LitBench prompt/domain feasibility inventory",
+  "datasets": {
+    "test_ids_complete": "SAA-Lab/LitBench-Test-IDs-Complete",
+    "train": "SAA-Lab/LitBench-Train",
+    "rationales": "SAA-Lab/LitBench-Rationales"
+  },
+  "outputs": {
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_domain_inventory.csv",
+    "overlaps": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_overlap_inventory.csv",
+    "story_summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_story_domain_inventory.csv",
+    "story_long_sample": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_story_long_sample.csv"
+  }
+}

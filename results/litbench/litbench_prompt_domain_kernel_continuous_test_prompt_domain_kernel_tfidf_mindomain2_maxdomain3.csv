@@ -1,0 +1,4 @@
+tag,kernel,quantity,mean,ci95_low,ci95_high,p_le_zero,p_ge_zero,n,n_boot
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,domain_contrast_delta,0.00012213098665952041,-7.806629389162249e-05,0.00033384774690968006,0.1236,0.8764,1155,5000
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,chosen_domain_specificity,0.00046012097737018485,0.00012306109907767694,0.0008350490868379243,0.0022,0.9978,1155,5000
+test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3,tfidf,rejected_domain_specificity,0.00033798999071066446,3.71367816807827e-05,0.0006735576964408852,0.0134,0.9866,1155,5000

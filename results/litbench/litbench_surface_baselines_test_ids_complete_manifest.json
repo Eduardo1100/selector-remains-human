@@ -1,0 +1,12 @@
+{
+  "dataset": "SAA-Lab/LitBench-Test-IDs-Complete",
+  "tag": "test_ids_complete",
+  "analysis": "surface-only pairwise baselines",
+  "n_rows": 2480,
+  "outputs": {
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_surface_baselines_test_ids_complete.csv",
+    "features": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_surface_features_test_ids_complete.csv"
+  },
+  "n_boot": 5000,
+  "seed": 123
+}

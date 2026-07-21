@@ -1,0 +1,4 @@
+dataset_a,dataset_b,n_prompt_a,n_prompt_b,n_prompt_overlap,frac_a_overlap,frac_b_overlap
+test_ids_complete,train,971,12419,0,0.0,0.0
+test_ids_complete,rationales,971,12409,0,0.0,0.0
+train,rationales,12419,12409,12405,0.9988726950640148,0.9996776533161416

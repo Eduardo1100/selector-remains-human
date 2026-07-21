@@ -1,0 +1,12 @@
+{
+  "analysis": "Subset-matched local baseline table for exact repeated-prompt overlap",
+  "tag": "subset1155_local_baselines_maxdomain10",
+  "domain_tag": "test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain10",
+  "tfidf_tag": "test_prompt_domain_kernel_tfidf_mindomain2_maxdomain3",
+  "embedding_tag": "test_prompt_domain_kernel_tfidf_embedding_mindomain2_maxdomain3",
+  "random_tag": "test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3",
+  "note": "This table compares already-computed local baselines. Official released LitBench verifier failed locally on CPU and should be run on GPU/HPC.",
+  "outputs": {
+    "table": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_subset_matched_baseline_table_subset1155_local_baselines_maxdomain10.csv"
+  }
+}

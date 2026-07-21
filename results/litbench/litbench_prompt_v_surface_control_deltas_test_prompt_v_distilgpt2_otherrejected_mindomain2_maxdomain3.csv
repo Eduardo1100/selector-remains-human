@@ -1,0 +1,6 @@
+tag,model_a,model_b,delta_accuracy,delta_ci95_low,delta_ci95_high,p_delta_le_zero,p_delta_ge_zero
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_plus_v,surface_format,0.06409266409266409,0.040154440154440155,0.0888030888030888,0.0,1.0
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_plus_v,v_only_logistic,-0.0015444015444015444,-0.03166023166023166,0.02857142857142857,0.554,0.4664
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_format,v_only_logistic,-0.06563706563706563,-0.10193050193050193,-0.029343629343629343,0.9998,0.0004
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,v_only_sign_rule,surface_format,-0.28262548262548265,-0.3196911196911197,-0.244015444015444,1.0,0.0
+test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3,surface_plus_v,v_only_sign_rule,0.3467181467181467,0.305019305019305,0.38764478764478766,0.0,1.0

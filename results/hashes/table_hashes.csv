@@ -11,3 +11,15 @@ generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_3_generic_
 generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_4_item_nll_correlations.csv,28055660a8f47b99b2934961b9ee078c25e2317a745031be85772730e892dd33,15,5,Generated paper table artifact.
 generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_4_item_nll_correlations.md,ecc0ca6b8c2443fe8ff116e6b70bd4654611be7388804365f6e62d12dae5e788,,,Generated paper table artifact.
 generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_4_item_nll_correlations.tex,ea099e1c83c0036755bcf348c1b82a9dc91e8a42bc5e512dceac219de0f57f37,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_5_absolute_effect_uncertainty.csv,4a337522912556123caa0cbf687e7a9bb53837491767bb7e00e9c51290405da6,9,6,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_5_absolute_effect_uncertainty.md,ee2b74e3c8c2fa02874324d8bcdd0a09fb4a895e2bda83c2846c41601fb9157f,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_5_absolute_effect_uncertainty.tex,b27026552d67f39711933c3bf1140452584d406e964c36148f0c1ab1730a9ea3,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_6_domain_contrast_bootstrap.csv,1f01ca9c60dd0ca34a9a46ce2fcaba194e67b0649805a014c652f5f657115017,4,9,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_6_domain_contrast_bootstrap.md,3d55c2f20653ab8f1d519a914d2e671d824861ef28a453fc71e7b5945df3403f,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_6_domain_contrast_bootstrap.tex,c67d7299dfd155808efb65d5acb70edd3ed53bbcc79820fdab0917df7f77cf5c,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_7_domain_contrast_target_pair_matrix.csv,22ed90991a469d62d62203085a4df5009f61b1043c111e98eea882b28d96f6a9,9,6,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_7_domain_contrast_target_pair_matrix.md,db88ccc3fde6a920c091f3239248998945a072ec4fc08a6739081393f1dbceaa,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_7_domain_contrast_target_pair_matrix.tex,445155d29ee305e444c7232898744ff7f491a96471a82a883377e4e072f76805,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_8_domain_contrast_by_control_family.csv,025c6fdbec3466be5f874831688bdd762da0042b29672b2a298796ecd10a8fbc,18,8,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_8_domain_contrast_by_control_family.md,b608c7a4960447e3c9b934e4e806dcc7f06bc10082323551b84b17ee07670659,,,Generated paper table artifact.
+generated,/home/eduardo/Projects/poemforge-paper/results/tables/table_8_domain_contrast_by_control_family.tex,c04a9a782e97eba18c4cc4c797d8c8deab3c019e028ba249f43905cfcc78c50b,,,Generated paper table artifact.

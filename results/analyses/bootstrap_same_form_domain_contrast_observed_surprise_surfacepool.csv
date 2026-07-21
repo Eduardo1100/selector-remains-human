@@ -1,0 +1,2 @@
+human_label,null_label,control,metric,n_items,observed_human_rho,observed_null_rho,observed_diff,n_human_files,n_null_files
+Surprise,Surprise_surfacepool,matchedctrl,v_pref_struct,36,0.518318289331815,0.48135994174467694,0.03695834758713806,5,5

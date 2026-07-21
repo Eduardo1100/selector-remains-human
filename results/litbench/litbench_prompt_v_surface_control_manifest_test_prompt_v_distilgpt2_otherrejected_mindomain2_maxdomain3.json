@@ -1,0 +1,14 @@
+{
+  "analysis": "Prompt-conditioned V controlled against formatting features",
+  "surface_tag": "test_ids_complete",
+  "v_tag": "test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3",
+  "tag": "test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3",
+  "n_rows": 1295,
+  "n_splits": 5,
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": {
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_surface_control_models_test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3.csv",
+    "deltas": "/home/eduardo/Projects/poemforge-paper/results/litbench/litbench_prompt_v_surface_control_deltas_test_prompt_v_distilgpt2_otherrejected_mindomain2_maxdomain3.csv"
+  }
+}

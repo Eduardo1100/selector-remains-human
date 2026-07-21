@@ -1,0 +1,6 @@
+tag,model,features,accuracy,ci95_low,ci95_high,n,n_boot
+test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3,surface_plus_v_and_domain_meta,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count"", ""prompt_conditioned_v""]",0.6974729241877257,0.6736462093862816,0.7212996389891697,1385,5000
+test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3,surface_plus_v,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count"", ""prompt_conditioned_v""]",0.6974729241877257,0.6736462093862816,0.7212996389891697,1385,5000
+test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3,v_only_logistic,"[""prompt_conditioned_v""]",0.6389891696750902,0.6129963898916968,0.6649819494584838,1385,5000
+test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3,v_only_sign_rule,"[""chosen_gain > rejected_gain""]",0.6375451263537906,0.612274368231047,0.6635379061371841,1385,5000
+test_prompt_v_distilgpt2_otherchosen_mindomain2_maxdomain3,surface_format,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count""]",0.6,0.5732851985559567,0.6259927797833935,1385,5000

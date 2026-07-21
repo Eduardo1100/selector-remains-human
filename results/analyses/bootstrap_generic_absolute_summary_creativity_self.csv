@@ -1,0 +1,5 @@
+target,domain_variant,control_variant,generic_metric,analysis,n_runs,observed_mean_rho,boot_mean,boot_std,ci95_low,ci95_high,p_boot_le_zero,p_boot_ge_zero,n_boot,ci_excludes_zero
+Creativity,accessible,matchedctrl,v_struct,generic_absolute_summary,3,-0.1839095446304531,-0.17979614748059752,0.16365297082173363,-0.4893405007717242,0.14253244721345826,0.8606,0.1394,5000,False
+Creativity,accessible,wordctrl,v_struct,generic_absolute_summary,3,0.17369473211655626,0.16997249910909815,0.183473628128219,-0.20138516581817859,0.5153617881222243,0.1816,0.8184,5000,False
+Creativity,formal,matchedctrl,v_struct,generic_absolute_summary,3,-0.3516384828838512,-0.34429392806914155,0.1306162153626249,-0.5823093587349367,-0.06945219363188294,0.9922,0.0078,5000,True
+Creativity,formal,wordctrl,v_struct,generic_absolute_summary,3,0.1736088933559353,0.16804704913760463,0.17916903541853624,-0.18826376815273832,0.5006783868026674,0.1794,0.8206,5000,False

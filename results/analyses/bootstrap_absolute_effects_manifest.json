@@ -1,0 +1,47 @@
+{
+  "analysis": "absolute_effect",
+  "n_boot": 5000,
+  "seed": 123,
+  "inputs": {
+    "targets_wide": "/home/eduardo/Projects/poemforge-paper/data/processed/targets_wide.csv",
+    "scores": "/home/eduardo/Projects/poemforge-paper/results/scores/phase_a_eval_scores",
+    "phase_a_results": "/home/eduardo/Projects/poemforge-paper/results/phase_a_eval_results"
+  },
+  "outputs": {
+    "observed": "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_absolute_effects_observed.csv",
+    "samples": "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_absolute_effects_samples.csv",
+    "summary": "/home/eduardo/Projects/poemforge-paper/results/analyses/bootstrap_absolute_effects_summary.csv"
+  },
+  "feature_sets": {
+    "other_human_targets": [
+      "target__Aesthetic_Appeal",
+      "target__Clarity",
+      "target__Creativity",
+      "target__Felt_Valence"
+    ],
+    "other_human_plus_surface": [
+      "target__Aesthetic_Appeal",
+      "target__Clarity",
+      "target__Creativity",
+      "target__Felt_Valence",
+      "word_len_calc",
+      "char_len_calc",
+      "line_count"
+    ],
+    "stacked": [
+      "target__Aesthetic_Appeal",
+      "target__Clarity",
+      "target__Creativity",
+      "target__Felt_Valence",
+      "word_len_calc",
+      "char_len_calc",
+      "line_count",
+      "item_nll_bpb__distilgpt2",
+      "item_nll_bpb__gpt2",
+      "item_nll_bpb__gpt2-medium"
+    ]
+  },
+  "metrics": [
+    "score_pref_struct"
+  ]
+}

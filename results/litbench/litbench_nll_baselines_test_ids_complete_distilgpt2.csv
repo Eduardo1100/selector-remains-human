@@ -1,0 +1,5 @@
+dataset,tag,model,baseline,accuracy,ci95_low,ci95_high,n,n_boot
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete_distilgpt2,distilgpt2,prefer_lower_avg_nll,0.542741935483871,0.5233870967741936,0.5620967741935484,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete_distilgpt2,distilgpt2,prefer_higher_total_nll,0.5133064516129032,0.4935483870967742,0.532258064516129,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete_distilgpt2,distilgpt2,prefer_lower_total_nll,0.4866935483870968,0.46774193548387094,0.5064516129032258,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete_distilgpt2,distilgpt2,prefer_higher_avg_nll,0.45725806451612905,0.43790322580645163,0.47661290322580646,2480,5000

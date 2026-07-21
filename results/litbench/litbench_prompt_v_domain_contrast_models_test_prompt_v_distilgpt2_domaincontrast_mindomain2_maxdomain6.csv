@@ -1,0 +1,8 @@
+tag,model,features,accuracy,ci95_low,ci95_high,n,n_boot
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,domain_contrast_sign_rule,"[""domain_contrast_sign_rule""]",0.7982683982683982,0.7748917748917749,0.8207792207792208,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,domain_specificity_logistic,"[""domain_specificity""]",0.793073593073593,0.7696969696969697,0.8164502164502164,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,surface_plus_domain_specificity,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count"", ""domain_specificity""]",0.7887445887445887,0.7653679653679654,0.8121212121212121,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,surface_plus_chosen_and_rejected_v,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count"", ""chosen_domain_v"", ""rejected_domain_v""]",0.7861471861471861,0.7627705627705628,0.8095238095238095,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,rejected_domain_reversed_sign_rule,"[""rejected_domain_reversed_sign_rule""]",0.6952380952380952,0.6683982683982684,0.7220779220779221,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,chosen_domain_sign_rule,"[""chosen_domain_sign_rule""]",0.6528138528138528,0.6251082251082251,0.6805194805194805,1155,5000
+test_prompt_v_distilgpt2_domaincontrast_mindomain2_maxdomain6,surface_format,"[""chars"", ""words"", ""type_token_ratio"", ""avg_word_len"", ""punct_count"", ""newline_count"", ""paragraph_count""]",0.6025974025974026,0.5731601731601732,0.6303030303030303,1155,5000

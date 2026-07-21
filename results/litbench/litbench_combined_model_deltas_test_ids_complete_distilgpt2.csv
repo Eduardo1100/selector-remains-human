@@ -1,0 +1,6 @@
+tag,model_a,model_b,delta_accuracy,delta_ci95_low,delta_ci95_high,p_delta_le_zero,p_delta_ge_zero
+test_ids_complete_distilgpt2,surface_plus_avg_nll,surface_format,0.0068548387096774195,-0.0064516129032258064,0.020161290322580645,0.1622,0.851
+test_ids_complete_distilgpt2,surface_plus_avg_and_total_nll,surface_format,0.007661290322580645,-0.005241935483870968,0.020967741935483872,0.1348,0.8766
+test_ids_complete_distilgpt2,surface_plus_avg_and_total_nll,surface_plus_avg_nll,0.0008064516129032258,-0.00282258064516129,0.004838709677419355,0.3804,0.7006
+test_ids_complete_distilgpt2,surface_format,nll_avg_only,0.054838709677419356,0.03064516129032258,0.07943548387096774,0.0,1.0
+test_ids_complete_distilgpt2,surface_plus_avg_nll,nll_avg_only,0.06169354838709677,0.0407258064516129,0.08306451612903226,0.0,1.0

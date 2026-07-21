@@ -1,0 +1,16 @@
+dataset,tag,baseline,accuracy,ci95_low,ci95_high,n,n_boot
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_more_upvotes_sanity,1.0,1.0,1.0,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_more_paragraphs,0.5887096774193549,0.5693447580645161,0.6076612903225806,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_more_newlines,0.5802419354838709,0.5612903225806452,0.5991935483870968,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_more_punct,0.5560483870967742,0.5366935483870968,0.575,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_lower_ttr,0.519758064516129,0.5008064516129033,0.5391129032258064,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_more_words,0.5092741935483871,0.49032258064516127,0.5282258064516129,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_more_chars,0.5092741935483871,0.4899193548387097,0.5278326612903225,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_lower_avg_word_len,0.5080645161290323,0.4879032258064516,0.5266129032258065,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_higher_avg_word_len,0.49193548387096775,0.47338709677419355,0.5120967741935484,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_fewer_chars,0.4907258064516129,0.4721673387096774,0.5100806451612904,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_fewer_words,0.48870967741935484,0.46975806451612906,0.5076612903225807,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_higher_ttr,0.48024193548387095,0.46088709677419354,0.4991935483870968,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_less_punct,0.4411290322580645,0.4221774193548387,0.46048387096774196,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_fewer_newlines,0.3959677419354839,0.37701612903225806,0.4149193548387097,2480,5000
+SAA-Lab/LitBench-Test-IDs-Complete,test_ids_complete,prefer_fewer_paragraphs,0.3782258064516129,0.3596774193548387,0.3971774193548387,2480,5000

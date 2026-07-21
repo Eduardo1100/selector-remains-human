@@ -1,0 +1,6 @@
+tag,quantity,mean,ci95_low,ci95_high,p_le_zero,p_ge_zero,n,n_boot
+test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3,domain_contrast_delta,0.005308960026711401,-0.04183734694651951,0.051480206596993185,0.417,0.583,1161,5000
+test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3,delta_a,-0.005729228642641066,-0.0350715720931674,0.022730239063390136,0.6588,0.3412,1161,5000
+test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3,delta_b,-0.011038188669352472,-0.040986890483932635,0.019018211194423408,0.766,0.234,1161,5000
+test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3,chosen_domain_specificity,0.008269328747009915,-0.021297782678408424,0.038464872548402106,0.2942,0.7058,1161,5000
+test_prompt_v_distilgpt2_randomsplit_seed123_mindomain2_maxdomain3,rejected_domain_specificity,0.0029603687202985145,-0.02986619672451907,0.03675748765320994,0.432,0.568,1161,5000

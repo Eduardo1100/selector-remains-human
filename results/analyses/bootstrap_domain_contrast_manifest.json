@@ -1,0 +1,17 @@
+{
+  "script": "62_bootstrap_domain_contrast.py",
+  "target": "Surprise",
+  "pool_target": "Surprise",
+  "generic_metric": "v_struct",
+  "supervised_metric": "v_pref_struct",
+  "n_boot": 5000,
+  "seed": 123,
+  "outputs": [
+    "bootstrap_domain_contrast_observed.csv",
+    "bootstrap_domain_contrast_samples.csv",
+    "bootstrap_domain_contrast_summary.csv",
+    "bootstrap_generic_absolute_observed.csv",
+    "bootstrap_generic_absolute_samples.csv",
+    "bootstrap_generic_absolute_summary.csv"
+  ]
+}

@@ -1,0 +1,32 @@
+
+# Large bootstrap sample artifacts, reproducible from pipeline scripts
+results/analyses/bootstrap_domain_contrast_samples.csv
+results/analyses/bootstrap_generic_absolute_samples.csv
+
+# Tagged large bootstrap sample artifacts, reproducible from pipeline scripts
+results/analyses/bootstrap_domain_contrast_samples*.csv
+results/analyses/bootstrap_generic_absolute_samples*.csv
+
+# Large observer-family bootstrap samples, reproducible from pipeline scripts
+results/analyses/bootstrap_observer_family_samples*.csv
+
+# Large same-form contrast bootstrap samples, reproducible from pipeline scripts
+results/analyses/bootstrap_same_form_domain_contrast_samples*.csv
+
+# Large LitBench cached/intermediate artifacts, reproducible from Hugging Face
+results/litbench/litbench_train_cached.csv
+results/litbench/litbench_train_surface_features.csv
+
+# Large/reproducible LitBench intermediates
+results/litbench/litbench_surface_features_*.csv
+results/litbench/litbench_train_cached.csv
+results/litbench/litbench_train_surface_features.csv
+
+# Large/reproducible LitBench NLL intermediates
+results/litbench/litbench_nll_scores_*.csv
+
+# Reproducible LitBench model prediction intermediates
+results/litbench/litbench_combined_model_predictions_*.csv
+
+__pycache__/
+*.py[cod]
