@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 
 
 ROOT = Path(__file__).resolve().parents[1]
+matplotlib.rcParams["svg.hashsalt"] = "poemforge-primary-figure"
 RESULTS = ROOT / "results" / "litbench"
 OUTPUT = ROOT / "paper" / "figures"
 SURFACE_ACCURACY = 0.6077922077922078
@@ -208,7 +209,13 @@ def draw_panel(rows: list[dict[str, object]], panel: str, output_stem: str) -> N
 
     svg = OUTPUT / f"{output_stem}.svg"
     png = OUTPUT / f"{output_stem}.png"
-    fig.savefig(svg, format="svg", bbox_inches="tight", pad_inches=0.16)
+    fig.savefig(
+        svg,
+        format="svg",
+        bbox_inches="tight",
+        pad_inches=0.16,
+        metadata={"Date": None},
+    )
     normalize_svg(svg)
     fig.savefig(png, dpi=400, bbox_inches="tight", pad_inches=0.16)
     plt.close(fig)
