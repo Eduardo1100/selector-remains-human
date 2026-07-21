@@ -1,7 +1,7 @@
 # The Selector Remains Human
-[Project site](https://eduardo1100.github.io/poemforge-paper/) ·
-[Paper PDF](https://eduardo1100.github.io/poemforge-paper/paper/main.pdf) ·
-[Release v0.1.0](https://github.com/Eduardo1100/poemforge-paper/releases/tag/v0.1.0)
+[Project site](https://eduardo1100.github.io/selector-remains-human/) ·
+[Paper PDF](https://eduardo1100.github.io/selector-remains-human/paper/main.pdf) ·
+[Release v0.1.0](https://github.com/Eduardo1100/selector-remains-human/releases/tag/v0.1.0)
 ## A negative result on compression-based value signals for creative text
 
 This repository accompanies a working paper by Eduardo Cortes. It asks whether
