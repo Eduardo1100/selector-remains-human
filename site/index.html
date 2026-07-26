@@ -3,30 +3,1539 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A negative result on compression-based value signals for creative text.">
+  <meta
+    name="description"
+    content="The Selector Remains Human: research on compression-based value signals, local human-shaped comparison sets, and the architecture of creative selection."
+  >
   <meta property="og:title" content="The Selector Remains Human">
-  <meta property="og:description" content="The strongest signal is prompt-local and human-labeled, not a transferable mechanical selector.">
+  <meta
+    property="og:description"
+    content="Models make possibilities abundant. This research asks what can—and cannot—supply the missing value-ordering."
+  >
   <meta property="og:image" content="assets/selector_remains_human_social_preview.png">
+  <meta name="theme-color" content="#070b16">
   <title>The Selector Remains Human</title>
   <style>
-    body { margin: 0; background: #f8fafc; color: #172033; font: 18px/1.6 system-ui, sans-serif; }
-    main { max-width: 860px; margin: auto; padding: 8vh 24px; }
-    h1 { font-size: clamp(2.3rem, 8vw, 5rem); line-height: .98; margin: 0 0 1rem; }
-    .deck { font-size: 1.35rem; max-width: 46rem; }
-    .result { border-left: 5px solid #52796f; padding: 1rem 1.25rem; background: #edf5f1; }
-    img { width: 100%; height: auto; margin: 2rem 0; }
-    a { color: #245b7a; }
+    :root {
+      color-scheme: dark;
+      --night: #060912;
+      --night-raised: #0b1020;
+      --panel: rgba(11, 17, 34, 0.82);
+      --panel-strong: rgba(8, 13, 28, 0.95);
+      --panel-soft: rgba(20, 28, 51, 0.62);
+      --line: rgba(151, 186, 225, 0.18);
+      --line-strong: rgba(117, 210, 238, 0.34);
+      --text: #f7f4ee;
+      --text-soft: #b8c3d9;
+      --text-dim: #7f8ba5;
+      --cyan: #18d7ff;
+      --cyan-soft: #8cecff;
+      --orange: #ff8a54;
+      --amber: #ffc56e;
+      --violet: #a78bfa;
+      --mint: #76e7c7;
+      --danger: #ff7777;
+      --shell: min(1180px, calc(100vw - 48px));
+      --sans: "Inter", "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+      --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      --mono: "SFMono-Regular", "Cascadia Mono", "Roboto Mono", Consolas, monospace;
+      --shadow: 0 32px 80px rgba(0, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 70% 7%, rgba(255, 119, 64, 0.23), transparent 30rem),
+        radial-gradient(circle at 18% 18%, rgba(70, 177, 255, 0.2), transparent 34rem),
+        radial-gradient(circle at 74% 45%, rgba(83, 43, 150, 0.19), transparent 34rem),
+        var(--night);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    body::before,
+    body::after {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+    }
+
+    body::before {
+      opacity: 0.42;
+      background-image:
+        linear-gradient(rgba(127, 164, 203, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(127, 164, 203, 0.035) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    body::after {
+      opacity: 0.2;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+      mix-blend-mode: soft-light;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .shell {
+      width: var(--shell);
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 8, 17, 0.78);
+      backdrop-filter: blur(22px) saturate(135%);
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .selector-mark {
+      position: relative;
+      width: 29px;
+      height: 28px;
+      flex: 0 0 29px;
+      filter: drop-shadow(0 0 14px rgba(24, 215, 255, 0.28));
+    }
+
+    .selector-mark::before,
+    .selector-mark::after {
+      position: absolute;
+      top: 3px;
+      width: 13px;
+      height: 22px;
+      content: "";
+      background: linear-gradient(180deg, var(--cyan) 0%, var(--orange) 100%);
+    }
+
+    .selector-mark::before {
+      left: 0;
+      clip-path: polygon(0 0, 100% 28%, 100% 72%, 0 100%);
+    }
+
+    .selector-mark::after {
+      right: 0;
+      clip-path: polygon(100% 0, 0 28%, 0 72%, 100% 100%);
+    }
+
+    .brand span:last-child {
+      color: var(--text-soft);
+    }
+
+    .brand strong {
+      color: var(--text);
+      font-weight: 720;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      color: var(--cyan-soft);
+    }
+
+    .nav-paper {
+      padding: 8px 13px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: rgba(24, 215, 255, 0.06);
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      padding: clamp(72px, 10vh, 118px) 0 72px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+      align-items: center;
+      gap: clamp(48px, 7vw, 94px);
+    }
+
+    .eyebrow,
+    .micro-label,
+    .panel-label,
+    .metric-label,
+    .framework-index,
+    .status-chip,
+    .boundary-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--cyan-soft);
+    }
+
+    .eyebrow::before {
+      display: inline-block;
+      width: 25px;
+      height: 1px;
+      margin-right: 11px;
+      vertical-align: 4px;
+      content: "";
+      background: linear-gradient(90deg, var(--cyan), var(--orange));
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 24px;
+      font-family: var(--serif);
+      font-size: clamp(4.6rem, 7.8vw, 7.25rem);
+      font-weight: 500;
+      line-height: 0.86;
+      letter-spacing: -0.065em;
+    }
+
+    h1 .human {
+      display: block;
+      color: transparent;
+      background: linear-gradient(95deg, var(--text) 8%, var(--cyan-soft) 52%, var(--orange) 98%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .hero-deck {
+      max-width: 650px;
+      margin-bottom: 30px;
+      color: var(--text-soft);
+      font-size: clamp(1.15rem, 1.5vw, 1.38rem);
+      line-height: 1.5;
+    }
+
+    .hero-deck strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .hero-actions,
+    .paper-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        background 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+    }
+
+    .button-primary {
+      border-color: rgba(85, 221, 255, 0.44);
+      background:
+        linear-gradient(130deg, rgba(24, 215, 255, 0.2), rgba(120, 74, 185, 0.14) 60%, rgba(255, 138, 84, 0.17));
+      box-shadow: 0 12px 34px rgba(14, 167, 205, 0.13);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.025);
+      color: var(--text-soft);
+    }
+
+    .hero-note {
+      max-width: 610px;
+      margin-top: 26px;
+      display: flex;
+      gap: 11px;
+      color: var(--text-dim);
+      font-size: 12px;
+    }
+
+    .hero-note .dot,
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      margin-top: 6px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 14px rgba(118, 231, 199, 0.45);
+    }
+
+    .selector-instrument {
+      position: relative;
+      min-height: 600px;
+      padding: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 26px;
+      background:
+        linear-gradient(150deg, rgba(25, 38, 68, 0.72), rgba(7, 12, 27, 0.95) 54%),
+        var(--panel);
+      box-shadow: var(--shadow), inset 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .selector-instrument::before {
+      position: absolute;
+      top: -90px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      content: "";
+      background: radial-gradient(circle, rgba(255, 125, 62, 0.34), transparent 68%);
+      filter: blur(12px);
+    }
+
+    .instrument-head {
+      position: relative;
+      z-index: 1;
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .instrument-head span:first-child {
+      color: var(--cyan-soft);
+    }
+
+    .live-signal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .live-signal i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 13px rgba(255, 138, 84, 0.8);
+    }
+
+    .instrument-body {
+      position: relative;
+      z-index: 1;
+      padding: 26px 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 42px 1.04fr;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .instrument-stage {
+      min-width: 0;
+    }
+
+    .micro-label {
+      margin-bottom: 12px;
+      color: var(--text-dim);
+    }
+
+    .candidate {
+      min-height: 60px;
+      margin-bottom: 9px;
+      padding: 11px 13px;
+      border: 1px solid rgba(142, 173, 215, 0.14);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.035);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .candidate-index {
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      display: grid;
+      flex: 0 0 26px;
+      place-items: center;
+      color: var(--cyan-soft);
+      font-family: var(--mono);
+      font-size: 10px;
+    }
+
+    .candidate-copy {
+      min-width: 0;
+    }
+
+    .candidate-copy b,
+    .candidate-copy small {
+      display: block;
+    }
+
+    .candidate-copy b {
+      overflow: hidden;
+      font-size: 12px;
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .candidate-copy small {
+      color: var(--text-dim);
+      font-size: 10px;
+    }
+
+    .flow-arrow {
+      position: relative;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), var(--orange));
+      box-shadow: 0 0 12px rgba(24, 215, 255, 0.45);
+    }
+
+    .flow-arrow::after {
+      position: absolute;
+      top: -3px;
+      right: -1px;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid var(--orange);
+      border-right: 1px solid var(--orange);
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    .selector-core {
+      position: relative;
+      min-height: 252px;
+      padding: 22px;
+      border: 1px solid rgba(24, 215, 255, 0.26);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 76% 20%, rgba(255, 138, 84, 0.2), transparent 45%),
+        linear-gradient(145deg, rgba(20, 41, 69, 0.68), rgba(8, 13, 29, 0.86));
+    }
+
+    .core-ring {
+      width: 96px;
+      height: 96px;
+      margin: 12px auto 19px;
+      border: 1px solid rgba(103, 230, 255, 0.55);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(24, 215, 255, 0.16), transparent 56%),
+        conic-gradient(from 40deg, rgba(24, 215, 255, 0.6), rgba(167, 139, 250, 0.28), rgba(255, 138, 84, 0.64), rgba(24, 215, 255, 0.6));
+      box-shadow:
+        0 0 0 10px rgba(24, 215, 255, 0.025),
+        0 0 36px rgba(24, 215, 255, 0.18);
+    }
+
+    .core-ring::after {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      content: "S";
+      background: var(--night-raised);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 35px;
+    }
+
+    .selector-core h2 {
+      margin-bottom: 6px;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+
+    .selector-core p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .reference-set {
+      position: relative;
+      z-index: 1;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(3, 7, 17, 0.6);
+    }
+
+    .reference-head {
+      margin-bottom: 13px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .reference-head b {
+      font-size: 12px;
+    }
+
+    .reference-head span {
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .reference-pool {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 7px;
+    }
+
+    .reference-node {
+      aspect-ratio: 1;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .reference-node.preferred {
+      border-color: rgba(118, 231, 199, 0.45);
+      background: rgba(118, 231, 199, 0.11);
+      box-shadow: inset 0 -10px 25px rgba(118, 231, 199, 0.05);
+    }
+
+    .reference-node.rejected {
+      border-color: rgba(255, 119, 119, 0.42);
+      background: rgba(255, 119, 119, 0.09);
+      box-shadow: inset 0 -10px 25px rgba(255, 119, 119, 0.04);
+    }
+
+    .instrument-status {
+      position: relative;
+      z-index: 1;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .status-chip {
+      color: var(--text-dim);
+      letter-spacing: 0.09em;
+    }
+
+    .status-chip.active {
+      color: var(--mint);
+    }
+
+    .thesis-strip {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(6, 10, 21, 0.58);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1.25fr repeat(3, 1fr);
+    }
+
+    .metric {
+      min-height: 150px;
+      padding: 22px 26px;
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .metric:last-child {
+      padding-right: 0;
+    }
+
+    .metric-label {
+      color: var(--text-dim);
+    }
+
+    .metric strong {
+      margin: 12px 0 7px;
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.65rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .metric:first-child strong {
+      max-width: 260px;
+      font-family: var(--sans);
+      font-size: 22px;
+      font-weight: 650;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+
+    .metric p {
+      margin-bottom: 0;
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .metric.emphasis strong {
+      color: var(--cyan-soft);
+    }
+
+    .content-section {
+      padding: clamp(90px, 11vw, 150px) 0;
+    }
+
+    .section-intro {
+      max-width: 820px;
+      margin-bottom: 52px;
+    }
+
+    .section-intro h2 {
+      margin-bottom: 18px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.3rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .section-intro > p:last-child {
+      max-width: 700px;
+      color: var(--text-soft);
+      font-size: 18px;
+    }
+
+    .evidence-stage {
+      position: relative;
+      padding: clamp(22px, 4vw, 46px);
+      border: 1px solid var(--line-strong);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 78% 15%, rgba(255, 138, 84, 0.16), transparent 30rem),
+        linear-gradient(150deg, rgba(21, 31, 58, 0.72), rgba(6, 10, 22, 0.92));
+      box-shadow: var(--shadow);
+    }
+
+    .evidence-head {
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .evidence-head h3 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .evidence-head p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    .figure-frame {
+      padding: clamp(12px, 2vw, 22px);
+      border: 1px solid rgba(205, 226, 247, 0.15);
+      border-radius: 18px;
+      background: #f7f7f4;
+    }
+
+    .figure-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .figure-note {
+      margin-top: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+
+    .framework-section {
+      position: relative;
+    }
+
+    .framework-section::before {
+      position: absolute;
+      top: 15%;
+      left: -12vw;
+      width: 42vw;
+      height: 42vw;
+      border-radius: 50%;
+      content: "";
+      background: radial-gradient(circle, rgba(24, 215, 255, 0.11), transparent 65%);
+      pointer-events: none;
+    }
+
+    .framework-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .framework-card {
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(145deg, rgba(19, 28, 51, 0.68), rgba(7, 12, 27, 0.82)),
+        var(--panel);
+      box-shadow: inset 0 1px rgba(255, 255, 255, 0.035);
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+    }
+
+    .framework-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-strong);
+      background:
+        radial-gradient(circle at 88% 7%, rgba(24, 215, 255, 0.1), transparent 45%),
+        linear-gradient(145deg, rgba(22, 34, 61, 0.78), rgba(7, 12, 27, 0.9));
+    }
+
+    .framework-index {
+      margin-bottom: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--cyan-soft);
+    }
+
+    .framework-index i {
+      width: 30px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+    }
+
+    .framework-card h3 {
+      margin-bottom: 12px;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .framework-card p {
+      margin-bottom: 0;
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .framework-card strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .relocation-panel {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 26px;
+      display: grid;
+      grid-template-columns: 0.78fr 1.22fr;
+      background: var(--panel-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .relocation-copy {
+      padding: clamp(30px, 5vw, 60px);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(24, 215, 255, 0.18), transparent 65%),
+        linear-gradient(155deg, rgba(17, 29, 53, 0.9), rgba(6, 10, 21, 0.96));
+    }
+
+    .relocation-copy h2 {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 4.7vw, 4.5rem);
+      font-weight: 500;
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+    }
+
+    .relocation-copy p:last-child {
+      margin-bottom: 0;
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    .relocation-steps {
+      padding: clamp(28px, 4.5vw, 52px);
+      display: grid;
+      gap: 12px;
+    }
+
+    .relocation-step {
+      padding: 19px 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.025);
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 14px;
+    }
+
+    .relocation-step > b {
+      color: var(--orange);
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    .relocation-step h3 {
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .relocation-step p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 11px;
+    }
+
+    .machine-rail {
+      margin-top: 14px;
+      padding-top: 19px;
+      border-top: 1px solid var(--line);
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+
+    .machine-rail b {
+      color: var(--mint);
+    }
+
+    .bounds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .boundary-card {
+      min-height: 245px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(10, 16, 31, 0.72);
+    }
+
+    .boundary-label {
+      margin-bottom: 35px;
+      color: var(--text-dim);
+    }
+
+    .boundary-card.established .boundary-label {
+      color: var(--mint);
+    }
+
+    .boundary-card.suggested .boundary-label {
+      color: var(--amber);
+    }
+
+    .boundary-card.not-claimed .boundary-label {
+      color: var(--danger);
+    }
+
+    .boundary-card h3 {
+      margin-bottom: 12px;
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+
+    .boundary-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 12px;
+    }
+
+    .paper-card {
+      position: relative;
+      padding: clamp(34px, 6vw, 70px);
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 83% 25%, rgba(255, 138, 84, 0.27), transparent 30rem),
+        radial-gradient(circle at 12% 80%, rgba(24, 215, 255, 0.18), transparent 32rem),
+        linear-gradient(140deg, rgba(19, 30, 55, 0.94), rgba(7, 11, 25, 0.96));
+      box-shadow: var(--shadow);
+    }
+
+    .paper-card::after {
+      position: absolute;
+      top: 50%;
+      right: 7%;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(99, 226, 255, 0.22);
+      border-radius: 50%;
+      content: "";
+      transform: translateY(-50%);
+      box-shadow:
+        0 0 0 32px rgba(24, 215, 255, 0.02),
+        0 0 0 64px rgba(24, 215, 255, 0.015);
+    }
+
+    .paper-card h2 {
+      position: relative;
+      z-index: 1;
+      max-width: 690px;
+      margin-bottom: 17px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 500;
+      line-height: 0.93;
+      letter-spacing: -0.055em;
+    }
+
+    .paper-card > p {
+      position: relative;
+      z-index: 1;
+      max-width: 660px;
+      color: var(--text-soft);
+    }
+
+    .paper-actions {
+      position: relative;
+      z-index: 1;
+      margin-top: 28px;
+    }
+
+    .site-footer {
+      padding: 34px 0 44px;
+      border-top: 1px solid var(--line);
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 30px;
+    }
+
+    .footer-grid p {
+      margin: 0;
+    }
+
+    .footer-grid a {
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        min-height: 0;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .selector-instrument {
+        min-height: 0;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric {
+        border-top: 1px solid var(--line);
+      }
+
+      .metric:nth-child(odd) {
+        border-left: 0;
+      }
+
+      .metric:first-child,
+      .metric:nth-child(2) {
+        border-top: 0;
+      }
+
+      .metric:first-child {
+        padding-left: 26px;
+      }
+
+      .framework-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .relocation-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .paper-card::after {
+        opacity: 0.45;
+      }
+    }
+
+    @media (max-width: 700px) {
+      :root {
+        --shell: min(100% - 30px, 1180px);
+      }
+
+      body {
+        font-size: 16px;
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .header-nav a:not(.nav-paper) {
+        display: none;
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      h1 {
+        font-size: clamp(4.05rem, 19vw, 5.8rem);
+      }
+
+      .selector-instrument {
+        padding: 17px;
+        border-radius: 20px;
+      }
+
+      .instrument-body {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-arrow {
+        width: 1px;
+        height: 30px;
+        margin: 0 auto;
+        background: linear-gradient(180deg, var(--cyan), var(--orange));
+      }
+
+      .flow-arrow::after {
+        top: auto;
+        right: -3px;
+        bottom: 0;
+        transform: rotate(135deg);
+      }
+
+      .instrument-status {
+        flex-wrap: wrap;
+      }
+
+      .metric-grid,
+      .framework-grid,
+      .bounds-grid,
+      .evidence-head,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metric,
+      .metric:first-child,
+      .metric:nth-child(2),
+      .metric:nth-child(odd) {
+        padding: 22px 4px;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .metric:first-child {
+        border-top: 0;
+      }
+
+      .framework-card {
+        min-height: 0;
+      }
+
+      .content-section {
+        padding: 84px 0;
+      }
+
+      .paper-card::after {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <p>Working manuscript · July 2026</p>
-    <h1>The Selector<br>Remains Human</h1>
-    <p class="deck">A negative result on compression-based value signals for creative text.</p>
-    <p class="result">Generic compression does not recover creative appraisal. The strong LitBench boundary is transductive, same-prompt, and preference-labeled; directional MiniLM is stronger than the language-model readout on identical rows.</p>
-    <img src="assets/selector_remains_human_figure1b.svg" alt="Horizontal point-and-interval plot showing that same-prompt preference labels create a strong transductive boundary, whereas random same-prompt and cross-prompt label domains remain near chance; vertical reference lines mark chance and the surface-format baseline.">
-    <p><a href="paper/main.pdf">Download the working-paper PDF</a> · <a href="paper/main.md">Read the manuscript source</a> · <a href="essay.md">Read the public essay</a> · <a href="docs/reproducibility.md">Read reproduction requirements</a></p>
-    <p><small>Repository software: <a href="LICENSE">MIT License</a>. Original manuscript, documentation, essay, site prose, and authored tables and figures: <a href="LICENSE-CONTENT.md">CC BY 4.0</a>. Third-party datasets, frozen external artifacts, model outputs, and material carrying its own terms are excluded.</small></p>
+  <header class="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="#top" aria-label="The Selector Remains Human home">
+        <span class="selector-mark" aria-hidden="true"></span>
+        <span><strong>Selector</strong> Research</span>
+      </a>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="#evidence">Evidence</a>
+        <a href="#framework">Framework</a>
+        <a href="#bounds">Boundaries</a>
+        <a class="nav-paper" href="paper/main.pdf">Read paper ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Creative search / working manuscript / July 2026</p>
+        <h1 id="page-title">The Selector <span class="human">Remains Human</span></h1>
+        <p class="hero-deck">
+          Models made creative possibilities abundant. They did not supply an
+          independent reason to value one possibility over another. This research
+          tests that missing layer—and finds that <strong>human-shaped context,
+          not a generic mechanical proxy, carried the useful signal.</strong>
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="paper/main.pdf">Download working paper <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#framework">Explore the framework <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-note">
+          <span class="dot" aria-hidden="true"></span>
+          <span>
+            The 87.7% result shown below is a transductive, same-prompt probe built
+            from other test labels. It is evidence of a strong local boundary—not
+            a transferable creative evaluator.
+          </span>
+        </p>
+      </div>
+
+      <aside class="selector-instrument" aria-label="Generator and selector framework diagram">
+        <div class="instrument-head">
+          <span class="panel-label">Generator / selector separation</span>
+          <span class="live-signal"><i aria-hidden="true"></i> Value source external</span>
+        </div>
+        <div class="instrument-body">
+          <div class="instrument-stage">
+            <p class="micro-label">01 / Generator</p>
+            <div class="candidate">
+              <span class="candidate-index">A</span>
+              <span class="candidate-copy"><b>Realized possibility</b><small>proposal, not verdict</small></span>
+            </div>
+            <div class="candidate">
+              <span class="candidate-index">B</span>
+              <span class="candidate-copy"><b>Realized possibility</b><small>proposal, not verdict</small></span>
+            </div>
+            <div class="candidate">
+              <span class="candidate-index">C</span>
+              <span class="candidate-copy"><b>Realized possibility</b><small>proposal, not verdict</small></span>
+            </div>
+          </div>
+
+          <div class="flow-arrow" aria-hidden="true"></div>
+
+          <div class="selector-core">
+            <p class="micro-label">02 / Independent judgment</p>
+            <div class="core-ring" aria-hidden="true"></div>
+            <h2>Selector</h2>
+            <p>A source of value-ordering whose authority does not derive from the generator.</p>
+          </div>
+        </div>
+
+        <div class="reference-set">
+          <div class="reference-head">
+            <b>Human-shaped reference set</b>
+            <span>Specific comparisons / local ecology</span>
+          </div>
+          <div class="reference-pool" aria-label="Preferred and rejected exemplars">
+            <span class="reference-node preferred" title="Preferred exemplar"></span>
+            <span class="reference-node rejected" title="Rejected exemplar"></span>
+            <span class="reference-node preferred" title="Preferred exemplar"></span>
+            <span class="reference-node preferred" title="Preferred exemplar"></span>
+            <span class="reference-node rejected" title="Rejected exemplar"></span>
+            <span class="reference-node preferred" title="Preferred exemplar"></span>
+            <span class="reference-node rejected" title="Rejected exemplar"></span>
+          </div>
+        </div>
+
+        <div class="instrument-status" aria-label="Selector properties">
+          <span class="status-chip active">● Local</span>
+          <span class="status-chip active">● Directional</span>
+          <span class="status-chip active">● Living</span>
+          <span class="status-chip">Not universal</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="thesis-strip" aria-label="Primary result summary">
+      <div class="metric-grid shell">
+        <article class="metric">
+          <span class="metric-label">The observed boundary</span>
+          <strong>Local labels carried the signal.</strong>
+          <p>Same prompt. Specific exemplars. Human preference labels. Transductive evaluation.</p>
+        </article>
+        <article class="metric emphasis">
+          <span class="metric-label">Directional top-3</span>
+          <strong>87.7%</strong>
+          <p>MiniLM against same-prompt preference pools · n=1,155</p>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Centroid pooling</span>
+          <strong>48.9%</strong>
+          <p>Averaging the same local domain erased the usable boundary.</p>
+        </article>
+        <article class="metric">
+          <span class="metric-label">Cross-prompt labels</span>
+          <strong>≈53%</strong>
+          <p>Preference-labeled domains did not transfer into a general selector.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section shell" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-intro">
+        <p class="eyebrow">Evidence / what the experiments changed</p>
+        <h2 id="evidence-title">The metric was not the miracle. The comparison set was.</h2>
+        <p>
+          A conditional language-model readout initially looked like a strong
+          compression-based selector. A crossed operator control changed the
+          interpretation: directional MiniLM performed better on the identical
+          rows, while centroid pooling failed.
+        </p>
+      </div>
+
+      <article class="evidence-stage">
+        <div class="evidence-head">
+          <h3>The strong boundary requires prompt-local preference labels.</h3>
+          <p>
+            Randomizing labels within the same prompt collapses to chance.
+            Moving real preference labels across prompts also collapses toward
+            chance. The result is local and label-defined, not a free-standing
+            value function.
+          </p>
+        </div>
+        <div class="figure-frame">
+          <img
+            src="assets/selector_remains_human_figure1b.svg"
+            alt="Horizontal point-and-interval plot showing that same-prompt preference labels create a strong transductive boundary, whereas random same-prompt and cross-prompt label domains remain near chance; vertical reference lines mark chance and the surface-format baseline."
+          >
+        </div>
+        <p class="figure-note">
+          <span class="legend-dot" aria-hidden="true"></span>
+          <span>
+            The surface-format baseline is 60.8%. The 87.7% row is not comparable
+            to an inductive reward-model score because its domains contain labels
+            from other held-out test items.
+          </span>
+        </p>
+      </article>
+    </section>
+
+    <section class="content-section framework-section" id="framework" aria-labelledby="framework-title">
+      <div class="shell">
+        <div class="section-intro">
+          <p class="eyebrow">Framework / anatomy of a selector</p>
+          <h2 id="framework-title">Creativity as search without a writable value function.</h2>
+          <p>
+            This is an engineering model, not a universal definition: a generator
+            proposes; a selector supplies value-ordering. The selector is defined
+            by where its authority comes from and how it compares—not by whether
+            it emits a score.
+          </p>
+        </div>
+
+        <div class="framework-grid">
+          <article class="framework-card">
+            <div class="framework-index"><span>01 / Decorrelation</span><i aria-hidden="true"></i></div>
+            <h3>Independent errors</h3>
+            <p>
+              The selector is useful when its mistakes are not the generator’s
+              mistakes. <strong>Judging a realized artifact</strong> creates some
+              informational independence even when architecture is shared.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <div class="framework-index"><span>02 / Unfrozenness</span><i aria-hidden="true"></i></div>
+            <h3>Alive at the frontier</h3>
+            <p>
+              A learned judge freezes yesterday’s labels. Creative value moves.
+              Frontier decisions require a source of judgment that can still
+              change with the audience, context, and moment.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <div class="framework-index"><span>03 / Grounding</span><i aria-hidden="true"></i></div>
+            <h3>Where order comes from</h3>
+            <p>
+              The world can ground proofs, compilers, and win conditions.
+              Internal proxies measure features. In open-ended aesthetics,
+              <strong>minds remain the tested source of value-ordering.</strong>
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <div class="framework-index"><span>04 / Reference set</span><i aria-hidden="true"></i></div>
+            <h3>The contrast pool matters</h3>
+            <p>
+              In these experiments, constructing what a candidate was compared
+              against mattered more than the readout family. Human-shaped pools
+              carried the strongest signal; generic domains did not.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <div class="framework-index"><span>05 / Form</span><i aria-hidden="true"></i></div>
+            <h3>Specific and directional</h3>
+            <p>
+              Candidate-to-exemplar relations preserved structure that a pooled
+              centroid destroyed. Taste behaved more like <strong>a set of
+              particular comparisons</strong> than a single prototype.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <div class="framework-index"><span>06 / Locality</span><i aria-hidden="true"></i></div>
+            <h3>Always for a situation</h3>
+            <p>
+              The prompt-local boundary was strong; the transferred boundary was
+              not. A selector is indexed to a property, population, context, and
+              time—not assumed to be a global aesthetic oracle.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="relocation-title">
+      <div class="relocation-panel">
+        <div class="relocation-copy">
+          <p class="eyebrow">The practical consequence</p>
+          <h2 id="relocation-title">Human work narrows—and moves upward.</h2>
+          <p>
+            The result is not that people must judge every output. It is that
+            automation did not remove the source of value. Human contribution
+            relocates from per-candidate labor to the conditions under which
+            candidates are judged.
+          </p>
+        </div>
+
+        <div class="relocation-steps">
+          <article class="relocation-step">
+            <b>01</b>
+            <div>
+              <h3>Construct the reference set</h3>
+              <p>Choose the exemplars, contrasts, and specific comparisons that constitute a local taste.</p>
+            </div>
+          </article>
+          <article class="relocation-step">
+            <b>02</b>
+            <div>
+              <h3>Adjudicate the frontier</h3>
+              <p>Intervene where a frozen proxy is least reliable and novelty makes automation uncertain.</p>
+            </div>
+          </article>
+          <article class="relocation-step">
+            <b>03</b>
+            <div>
+              <h3>Make high-leverage commitments</h3>
+              <p>Set premises, direction, and path-dependent decisions that downstream execution inherits.</p>
+            </div>
+          </article>
+          <article class="relocation-step">
+            <b>04</b>
+            <div>
+              <h3>Certify non-drift</h3>
+              <p>Check that the machine’s ordering still resembles the intended human one.</p>
+            </div>
+          </article>
+          <p class="machine-rail">
+            <b>Machine work:</b> generation, diversity, revision execution,
+            inexpensive readout, and the bulk of low-novelty scoring.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell" id="bounds" aria-labelledby="bounds-title">
+      <div class="section-intro">
+        <p class="eyebrow">Scientific boundary / evidence before mythology</p>
+        <h2 id="bounds-title">A useful negative—not an impossibility proof.</h2>
+        <p>
+          The framework is a disciplined interpretation of two datasets and a
+          family of tested mechanisms. The site keeps established results,
+          engineering implications, and open philosophical claims separate.
+        </p>
+      </div>
+
+      <div class="bounds-grid">
+        <article class="boundary-card established">
+          <p class="boundary-label">Established here</p>
+          <h3>The tested generic proxies were insufficient.</h3>
+          <p>
+            Generic compression and surprise did not recover appraisal. The
+            strongest LitBench boundary depended on prompt-local human labels
+            and per-instance comparison.
+          </p>
+        </article>
+        <article class="boundary-card suggested">
+          <p class="boundary-label">Engineering implication</p>
+          <h3>Invest in the conditions of judgment.</h3>
+          <p>
+            Tools should help people curate exemplars, preserve context, express
+            disagreement, compare concrete alternatives, and monitor drift.
+          </p>
+        </article>
+        <article class="boundary-card not-claimed">
+          <p class="boundary-label">Not claimed</p>
+          <h3>No mechanical value signal can ever exist.</h3>
+          <p>
+            The experiments reject the tested mechanisms as sufficient
+            label-free selectors. They do not prove that every possible
+            world-trained or population-grounded observer must fail.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section shell" aria-labelledby="paper-title">
+      <article class="paper-card">
+        <p class="eyebrow">Working paper / methods, controls, and reproducibility</p>
+        <h2 id="paper-title">Read the full argument.</h2>
+        <p>
+          The manuscript documents the compression hypothesis, the negative
+          poetry result, the LitBench operator confound, the local-label
+          boundary, crossed controls, limitations, and the exact reproduction
+          path.
+        </p>
+        <div class="paper-actions">
+          <a class="button button-primary" href="paper/main.pdf">Download PDF <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="paper/main.md">Manuscript source</a>
+          <a class="button button-secondary" href="essay.md">Public essay</a>
+          <a class="button button-secondary" href="docs/reproducibility.md">Reproduce</a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/Eduardo1100/selector-remains-human"
+            rel="noreferrer"
+          >Repository ↗</a>
+        </div>
+      </article>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid shell">
+      <p>
+        The Selector Remains Human<br>
+        Eduardo Cortes · July 2026
+      </p>
+      <p>
+        Repository software: <a href="LICENSE">MIT License</a>. Original
+        manuscript, documentation, essay, site prose, and authored tables and
+        figures: <a href="LICENSE-CONTENT.md">CC BY 4.0</a>. Third-party
+        datasets, frozen external artifacts, model outputs, and material
+        carrying its own terms are excluded.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
