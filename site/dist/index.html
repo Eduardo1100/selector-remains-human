@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta
     name="description"
-    content="The Selector Remains Human: research on compression-based value signals, local human-shaped comparison sets, and the architecture of creative selection."
+    content="Eduardo Cortes built and tested a generator-selector framework for creative AI, then used the result to shape Manifold's human- and audience-grounded product architecture."
   >
   <meta property="og:title" content="The Selector Remains Human">
   <meta
     property="og:description"
-    content="Models make possibilities abundant. This research asks what can—and cannot—supply the missing value-ordering."
+    content="Models make possibilities abundant. This independent research project asks what supplies the missing judgment—and shows how the answer shaped Manifold."
   >
   <meta property="og:image" content="assets/selector_remains_human_social_preview.png">
   <meta name="theme-color" content="#070b16">
@@ -740,6 +740,47 @@
       font-size: 11px;
     }
 
+    .control-ledger {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .control-card {
+      min-height: 190px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(5, 10, 22, 0.62);
+    }
+
+    .control-card span {
+      color: var(--text-dim);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .control-card h3 {
+      margin: 30px 0 9px;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .control-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .control-card strong {
+      color: var(--cyan-soft);
+    }
+
     .framework-section {
       position: relative;
     }
@@ -898,6 +939,220 @@
       color: var(--mint);
     }
 
+    .origin-section {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 88% 20%, rgba(255, 138, 84, 0.1), transparent 34rem),
+        radial-gradient(circle at 4% 85%, rgba(24, 215, 255, 0.1), transparent 34rem),
+        rgba(6, 10, 21, 0.58);
+    }
+
+    .origin-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .origin-card {
+      position: relative;
+      min-height: 330px;
+      padding: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background:
+        linear-gradient(150deg, rgba(19, 29, 54, 0.78), rgba(6, 11, 24, 0.9)),
+        var(--panel);
+    }
+
+    .origin-card::after {
+      position: absolute;
+      right: -12px;
+      bottom: -36px;
+      color: rgba(151, 186, 225, 0.055);
+      content: attr(data-step);
+      font-family: var(--serif);
+      font-size: 140px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .origin-kicker {
+      color: var(--cyan-soft);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .origin-card h3 {
+      position: relative;
+      z-index: 1;
+      margin: 46px 0 13px;
+      font-family: var(--serif);
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+    }
+
+    .origin-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .origin-card a {
+      color: var(--cyan-soft);
+      text-decoration-color: rgba(140, 236, 255, 0.35);
+      text-underline-offset: 3px;
+    }
+
+    .build-ledger {
+      margin-top: 18px;
+      padding: clamp(26px, 4vw, 44px);
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: rgba(5, 10, 22, 0.72);
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: clamp(28px, 5vw, 64px);
+    }
+
+    .build-ledger h3 {
+      margin: 10px 0 14px;
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 4vw, 3.7rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .build-ledger-copy > p:last-child {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .build-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .build-item b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--mint);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .build-item p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .product-panel {
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 82% 16%, rgba(255, 138, 84, 0.18), transparent 34rem),
+        linear-gradient(145deg, rgba(15, 26, 48, 0.92), rgba(6, 10, 22, 0.96));
+      box-shadow: var(--shadow);
+    }
+
+    .product-head {
+      padding: clamp(30px, 5vw, 58px);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .product-head h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      font-weight: 500;
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
+
+    .product-head p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 16px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-card {
+      min-height: 255px;
+      padding: 28px;
+      border-left: 1px solid var(--line);
+    }
+
+    .product-card:first-child {
+      border-left: 0;
+    }
+
+    .product-card span {
+      color: var(--orange);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .product-card h3 {
+      margin: 42px 0 12px;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+
+    .product-card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .product-boundary {
+      margin: 0;
+      padding: 20px clamp(30px, 5vw, 58px);
+      border-top: 1px solid var(--line);
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+
+    .product-boundary strong {
+      color: var(--amber);
+    }
+
     .bounds-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1054,7 +1309,17 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .control-ledger,
+      .origin-timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .relocation-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .build-ledger,
+      .product-head {
         grid-template-columns: 1fr;
       }
 
@@ -1121,6 +1386,10 @@
 
       .metric-grid,
       .framework-grid,
+      .control-ledger,
+      .origin-timeline,
+      .build-grid,
+      .product-grid,
       .bounds-grid,
       .evidence-head,
       .footer-grid {
@@ -1142,6 +1411,22 @@
 
       .framework-card {
         min-height: 0;
+      }
+
+      .origin-card,
+      .control-card,
+      .product-card {
+        min-height: 0;
+      }
+
+      .product-card,
+      .product-card:first-child {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .product-card:first-child {
+        border-top: 0;
       }
 
       .content-section {
@@ -1177,6 +1462,8 @@
       <nav class="header-nav" aria-label="Primary navigation">
         <a href="#evidence">Evidence</a>
         <a href="#framework">Framework</a>
+        <a href="#origin">Origin</a>
+        <a href="#product">Product</a>
         <a href="#bounds">Boundaries</a>
         <a class="nav-paper" href="paper/main.pdf">Read paper ↗</a>
       </nav>
@@ -1186,17 +1473,19 @@
   <main id="top">
     <section class="hero shell" aria-labelledby="page-title">
       <div class="hero-copy">
-        <p class="eyebrow">Creative search / working manuscript / July 2026</p>
+        <p class="eyebrow">Independent research + product architecture / Eduardo Cortes / July 2026</p>
         <h1 id="page-title">The Selector <span class="human">Remains Human</span></h1>
         <p class="hero-deck">
-          Models made creative possibilities abundant. They did not supply an
-          independent reason to value one possibility over another. This research
-          tests that missing layer—and finds that <strong>human-shaped context,
-          not a generic mechanical proxy, carried the useful signal.</strong>
+          I built this project after an AI-native media pipeline made the real
+          bottleneck obvious: models could produce more songs, scenes, and
+          directions than I could meaningfully choose among. Across poetry and
+          LitBench, I tested whether a generic mechanical proxy could supply that
+          missing judgment. <strong>It could not. Human-shaped context carried
+          the useful signal.</strong>
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="paper/main.pdf">Download working paper <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="#framework">Explore the framework <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="#origin">See why I built it <span aria-hidden="true">↓</span></a>
         </div>
         <p class="hero-note">
           <span class="dot" aria-hidden="true"></span>
@@ -1326,6 +1615,41 @@
             from other held-out test items.
           </span>
         </p>
+
+        <div class="control-ledger" aria-label="Decisive experimental controls">
+          <article class="control-card">
+            <span>Hypothesis 01 / Generic proxy</span>
+            <h3>Can compression replace appraisal?</h3>
+            <p>
+              On human-rated poetry, generic literary compression did not
+              recover human ratings and could anti-align under matched controls.
+            </p>
+          </article>
+          <article class="control-card">
+            <span>Hypothesis 02 / Compression-specific</span>
+            <h3>Was the strong LitBench result uniquely linguistic?</h3>
+            <p>
+              No. Directional MiniLM reached <strong>87.7%</strong> on the same
+              1,155 rows where the conditional-LM readout reached 79.7%.
+            </p>
+          </article>
+          <article class="control-card">
+            <span>Hypothesis 03 / Prompt similarity</span>
+            <h3>Was sharing a prompt sufficient?</h3>
+            <p>
+              No. Random same-prompt domains fell to <strong>48.9%</strong>.
+              The preference labels—not prompt membership alone—were load-bearing.
+            </p>
+          </article>
+          <article class="control-card">
+            <span>Hypothesis 04 / Transfer</span>
+            <h3>Did human-shaped domains generalize?</h3>
+            <p>
+              Not across prompts. Train- and test-labeled cross-prompt domains
+              stayed near <strong>53%</strong> and did not become a general selector.
+            </p>
+          </article>
+        </div>
       </article>
     </section>
 
@@ -1456,6 +1780,148 @@
       </div>
     </section>
 
+    <section class="content-section origin-section" id="origin" aria-labelledby="origin-title">
+      <div class="shell">
+        <div class="section-intro">
+          <p class="eyebrow">Founder path / from production bottleneck to company architecture</p>
+          <h2 id="origin-title">I built this because generation stopped being the bottleneck.</h2>
+          <p>
+            This was not research invented after the company. It records the
+            sequence of systems I built, the shortcut I hoped would work, the
+            controls that broke that interpretation, and the product decision
+            that followed.
+          </p>
+        </div>
+
+        <div class="origin-timeline">
+          <article class="origin-card" data-step="01">
+            <span class="origin-kicker">AI-native production pipeline</span>
+            <h3>Abundance exposed the selection problem.</h3>
+            <p>
+              I assembled a reusable pipeline for research, music, image and
+              video synthesis, editing, captioning, and release packaging.
+              Generators could produce many plausible directions; the expensive
+              decision became which direction deserved another round of work.
+            </p>
+          </article>
+          <article class="origin-card" data-step="02">
+            <span class="origin-kicker">Manifold Studio / Idea Search</span>
+            <h3>I separated proposing from judging.</h3>
+            <p>
+              I built a private selection system around concrete candidates,
+              pairwise judgments, remembered constraints, and mutation. The
+              public <a href="https://eduardo1100.github.io/manifold-studio/" rel="noreferrer">Idea Search artifact ↗</a>
+              shows the method without exposing the private application.
+            </p>
+          </article>
+          <article class="origin-card" data-step="03">
+            <span class="origin-kicker">Selector research</span>
+            <h3>I tried to remove the remaining judgment cost.</h3>
+            <p>
+              I tested compression progress, model surprise, conditional
+              language-model readouts, surface controls, TF-IDF, MiniLM,
+              centroid pooling, directional instance-level operators, random
+              labels, cross-prompt transfer, and bootstrap uncertainty.
+            </p>
+          </article>
+          <article class="origin-card" data-step="04">
+            <span class="origin-kicker">Manifold</span>
+            <h3>The selector became a social layer.</h3>
+            <p>
+              The product leap was not “build a better score.” It was to let
+              creators define bounded decisions, let audiences compare actual
+              possibilities, record commitments and fulfillment, and make each
+              consequence part of a persistent property history.
+            </p>
+          </article>
+        </div>
+
+        <article class="build-ledger">
+          <div class="build-ledger-copy">
+            <p class="eyebrow">What I personally built</p>
+            <h3>An auditable research system, not a single result.</h3>
+            <p>
+              The repository preserves the path from processed inputs to
+              controls, uncertainty estimates, figures, manuscript, PDF, and
+              this self-contained publication bundle. The strongest number is
+              useful because the failed interpretations around it are also
+              recorded.
+            </p>
+          </div>
+          <div class="build-grid">
+            <article class="build-item">
+              <b>Data + provenance</b>
+              <p>Normalized human ratings and pairwise comparisons, tracked frozen inputs, manifests, and machine-readable figure data.</p>
+            </article>
+            <article class="build-item">
+              <b>Readout families</b>
+              <p>Compression, item surprise, conditional LM, TF-IDF, MiniLM, centroid, and directional per-instance operators.</p>
+            </article>
+            <article class="build-item">
+              <b>Falsification controls</b>
+              <p>Identical-row operator crosses, random labels, surface baselines, prompt-local and cross-prompt domains, and bootstrap intervals.</p>
+            </article>
+            <article class="build-item">
+              <b>Publication path</b>
+              <p>Generated figures, reproducible tables, working manuscript and PDF, public essay, validation scripts, and static deployment bundle.</p>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section shell" id="product" aria-labelledby="product-title">
+      <article class="product-panel">
+        <div class="product-head">
+          <div>
+            <p class="eyebrow">Research → product / what changed in Manifold</p>
+            <h2 id="product-title">Build after the generator.</h2>
+          </div>
+          <p>
+            Generators are becoming abundant and interchangeable. Manifold is
+            designed around the layer they do not own: who has authority, which
+            possibilities a community can influence, what was promised, and
+            what the eventual release proves happened.
+          </p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <span>01 / Concrete comparison</span>
+            <h3>Judge realized alternatives, not an abstract prompt.</h3>
+            <p>
+              Audience decisions operate on specific candidate scenes, songs,
+              characters, or directions. This preserves the instance-level,
+              local structure that pooling erased in the experiments.
+            </p>
+          </article>
+          <article class="product-card">
+            <span>02 / Explicit authority</span>
+            <h3>Model decision rights instead of treating every vote as truth.</h3>
+            <p>
+              Creators define what is open, the resolution rule, whether the
+              result is binding, and which approval boundaries remain. Audience
+              preference is local governance—not universal artistic quality.
+            </p>
+          </article>
+          <article class="product-card">
+            <span>03 / Visible consequence</span>
+            <h3>Turn selection into persistent property history.</h3>
+            <p>
+              A Loop Contract records the options, commitment, decision,
+              fulfillment state, and descendant release. The audience can see
+              what its action changed instead of disappearing into a metric.
+            </p>
+          </article>
+        </div>
+        <p class="product-boundary">
+          <strong>Evidence boundary:</strong> the research explains these
+          architectural choices. It does not prove that audiences will join,
+          return, pay, or prefer Manifold to an incumbent platform. Those are
+          separate product experiments.
+        </p>
+      </article>
+    </section>
+
     <section class="content-section shell" id="bounds" aria-labelledby="bounds-title">
       <div class="section-intro">
         <p class="eyebrow">Scientific boundary / evidence before mythology</p>
@@ -1504,13 +1970,13 @@
         <p>
           The manuscript documents the compression hypothesis, the negative
           poetry result, the LitBench operator confound, the local-label
-          boundary, crossed controls, limitations, and the exact reproduction
-          path.
+          boundary, crossed controls, limitations, the founder-to-product
+          interpretation, and the exact reproduction path.
         </p>
         <div class="paper-actions">
           <a class="button button-primary" href="paper/main.pdf">Download PDF <span aria-hidden="true">↗</span></a>
           <a class="button button-secondary" href="paper/main.md">Manuscript source</a>
-          <a class="button button-secondary" href="essay.md">Public essay</a>
+          <a class="button button-secondary" href="essay.md">Founder essay</a>
           <a class="button button-secondary" href="docs/reproducibility.md">Reproduce</a>
           <a
             class="button button-secondary"
