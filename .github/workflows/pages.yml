@@ -31,6 +31,7 @@ jobs:
 
       - name: Verify committed publication bundle
         run: |
+          python scripts/check_brand.py
           python scripts/build_site.py --check
           python scripts/check_publication.py --bundle
 

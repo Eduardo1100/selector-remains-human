@@ -61,6 +61,11 @@ def main() -> None:
             ROOT / "site/dist/LICENSE", ROOT / "site/dist/LICENSE-CONTENT.md",
             ROOT / "site/dist/paper/main.md", ROOT / "site/dist/paper/main.pdf",
             ROOT / "site/dist/assets/figure1_data.json", ROOT / "paper/main.pdf",
+            ROOT / "site/dist/assets/manifold-mark.png",
+            ROOT / "site/dist/assets/manifold-favicon.png",
+            ROOT / "site/dist/assets/manifold-research-social-preview.png",
+            ROOT / "site/dist/brand-provenance.json",
+            ROOT / "site/dist/docs/BRAND.md",
         ]
         missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
         assert not missing, f"Missing publication bundle files: {missing}"

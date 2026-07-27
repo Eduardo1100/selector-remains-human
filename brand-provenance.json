@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "brand_version": "manifold-brand@1.0.0",
+  "canonical_source": "https://manifold-official.eduardo11.chatgpt.site",
+  "canonical_manifest": "https://manifold-official.eduardo11.chatgpt.site/brand/manifest.json",
+  "synchronized_at": "2026-07-27",
+  "surface": {
+    "name": "Manifold Research",
+    "profile": "editorial research observatory",
+    "paper_title": "The Selector Remains Human"
+  },
+  "assets": [
+    {
+      "role": "mark",
+      "source_asset_path": "/brand/manifold-mark.png",
+      "local_asset_path": "site/assets/manifold-mark.png",
+      "sha256": "29253c4af687e367234e03dd005b77285381589ed459a9c0e24ca21c9ff62cc4",
+      "width": 234,
+      "height": 181,
+      "format": "png",
+      "notes": "Byte-for-byte canonical asset. Do not trace, redraw, recolor, stretch, or approximate."
+    },
+    {
+      "role": "favicon",
+      "source_asset_path": "/brand/manifold-favicon.png",
+      "local_asset_path": "site/assets/manifold-favicon.png",
+      "sha256": "6b3d4998cc2083d22665aa36ab2042331ade3ae8032d002f8b23135d733a3261",
+      "width": 64,
+      "height": 64,
+      "format": "png",
+      "notes": "Byte-for-byte canonical asset."
+    }
+  ],
+  "protected_research_assets": [
+    {
+      "path": "paper/figures/figure1_data.json",
+      "sha256": "c875b2c6515be7de8726d69e58222e187b228279eb0fdc5e9f33c212f2ccf7dd"
+    },
+    {
+      "path": "paper/figures/selector_remains_human_figure1a.png",
+      "sha256": "37b9c216bbadc35ff5e7a26c3693d669c31c3497f895f2f7adbb464edaba58ad"
+    },
+    {
+      "path": "paper/figures/selector_remains_human_figure1a.svg",
+      "sha256": "4305b0f90e3cf0650c528227ffc76d6176dfa90238d2425982c3d28914c335f2"
+    },
+    {
+      "path": "paper/figures/selector_remains_human_figure1b.png",
+      "sha256": "98c76568019a37318a2ed22b08a0deb1d020b73f0e4a971b0d89cb49266b25ff"
+    },
+    {
+      "path": "paper/figures/selector_remains_human_figure1b.svg",
+      "sha256": "4021c99346f7f1a55b71e23f59df8124a10c56de88d42168510bfc8b56317110"
+    },
+    {
+      "path": "paper/figures/selector_remains_human_social_preview.png",
+      "sha256": "0ded0b884b555c83e6abf469383885cfacee3bbf0826e43a2f10f7cc183963de"
+    }
+  ]
+}
