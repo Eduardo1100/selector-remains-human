@@ -1,0 +1,16 @@
+{
+  "name": "Manifold Research — The Selector Remains Human",
+  "short_name": "Manifold Research",
+  "description": "Research on why prompt-local human preference labels, not generic mechanical proxies, carried the strongest tested selection signal.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#060915",
+  "theme_color": "#060915",
+  "icons": [
+    {
+      "src": "assets/manifold-favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}

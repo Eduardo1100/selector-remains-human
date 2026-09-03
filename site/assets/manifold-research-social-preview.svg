@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="cyanAtmosphere" cx="0" cy="0" r="1" gradientTransform="translate(216 112) rotate(45) scale(480 330)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="emberAtmosphere" cx="0" cy="0" r="1" gradientTransform="translate(1020 96) rotate(133) scale(410 310)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FC4C0D" stop-opacity=".20"/>
+      <stop offset="1" stop-color="#FC4C0D" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#22D3EE" stop-opacity=".9"/>
+      <stop offset=".68" stop-color="#3B82F6" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#FC4C0D" stop-opacity=".9"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#7D9BDC" stroke-opacity=".055"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#060915"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#cyanAtmosphere)"/>
+  <rect width="1200" height="630" fill="url(#emberAtmosphere)"/>
+
+  <rect x="48.5" y="42.5" width="1103" height="545" rx="16" fill="#0C1224" fill-opacity=".72" stroke="#7D9BDC" stroke-opacity=".22"/>
+  <path d="M49 43H1151" stroke="url(#edge)"/>
+
+  <image href="manifold-mark.png" x="80" y="78" width="52" height="40.2" preserveAspectRatio="xMidYMid meet"/>
+  <text x="150" y="108" fill="#F2F6FF" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="700">Manifold</text>
+  <text x="286" y="108" fill="#9FB0D0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="600">Research</text>
+
+  <text x="80" y="188" fill="#22D3EE" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="700" letter-spacing="2.4">WORKING PAPER · JULY 2026</text>
+  <text x="80" y="284" fill="#F2F6FF" font-family="Iowan Old Style, Georgia, serif" font-size="72" font-weight="500" letter-spacing="-2.5">The Selector</text>
+  <text x="80" y="360" fill="#F2F6FF" font-family="Iowan Old Style, Georgia, serif" font-size="72" font-weight="500" letter-spacing="-2.5">Remains Human</text>
+
+  <text x="80" y="430" fill="#9FB0D0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="24">The comparison set carried the strongest tested signal.</text>
+  <text x="80" y="468" fill="#7D8FB3" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="18">Poetry · LitBench · crossed controls · bounded engineering implications</text>
+
+  <g transform="translate(828 164)">
+    <rect width="260" height="260" rx="16" fill="#070B18" fill-opacity=".84" stroke="#22D3EE" stroke-opacity=".34"/>
+    <circle cx="130" cy="130" r="76" fill="none" stroke="#7D9BDC" stroke-opacity=".22"/>
+    <circle cx="130" cy="130" r="50" fill="#0E1A34" stroke="#22D3EE" stroke-opacity=".55"/>
+    <path d="M48 67L88 88M212 67L172 88M48 193L88 172M212 193L172 172" stroke="#7D9BDC" stroke-opacity=".34"/>
+    <circle cx="48" cy="67" r="7" fill="#34D399"/>
+    <circle cx="212" cy="67" r="7" fill="#FB7185"/>
+    <circle cx="48" cy="193" r="7" fill="#34D399"/>
+    <circle cx="212" cy="193" r="7" fill="#FB7185"/>
+    <text x="130" y="124" text-anchor="middle" fill="#F2F6FF" font-family="Iowan Old Style, Georgia, serif" font-size="26">local</text>
+    <text x="130" y="151" text-anchor="middle" fill="#9FB0D0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.2">JUDGMENT</text>
+  </g>
+
+  <path d="M80 532H1120" stroke="#7D9BDC" stroke-opacity=".22"/>
+  <text x="80" y="558" fill="#7D8FB3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1.2">EVIDENCE, NOT MARKET VALIDATION</text>
+  <text x="1120" y="558" text-anchor="end" fill="#9FB0D0" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="15">manifoldarena.com</text>
+</svg>

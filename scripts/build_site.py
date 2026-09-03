@@ -20,6 +20,12 @@ ASSETS = [
     "paper/figures/selector_remains_human_social_preview.png",
     "paper/figures/figure1_data.json",
 ]
+BRAND_ASSETS = [
+    "site/assets/manifold-mark.png",
+    "site/assets/manifold-favicon.png",
+    "site/assets/manifold-research-social-preview.svg",
+    "site/assets/manifold-research-social-preview.png",
+]
 DOCUMENTS = [
     "LICENSE",
     "LICENSE-CONTENT.md",
@@ -29,7 +35,9 @@ DOCUMENTS = [
     "CITATION.cff",
     "docs/reproducibility.md",
     "docs/PUBLICATION.md",
+    "docs/BRAND.md",
     "site/publication_README.md",
+    "brand-provenance.json",
 ]
 
 
@@ -62,6 +70,10 @@ def check() -> None:
         DIST / "assets/selector_remains_human_figure1b.svg",
         DIST / "assets/selector_remains_human_figure1b.png",
         DIST / "assets/selector_remains_human_social_preview.png", DIST / "assets/figure1_data.json",
+        DIST / "assets/manifold-mark.png", DIST / "assets/manifold-favicon.png",
+        DIST / "assets/manifold-research-social-preview.svg",
+        DIST / "assets/manifold-research-social-preview.png",
+        DIST / "site.webmanifest", DIST / "brand-provenance.json", DIST / "docs/BRAND.md",
     ]
     missing = [str(path.relative_to(DIST)) for path in required if not path.exists()]
     if missing:
@@ -99,9 +111,12 @@ def main() -> None:
     copy_file("site/index.html", "index.html")
     for relative in ASSETS:
         copy_file(relative, "assets/" + Path(relative).name)
+    for relative in BRAND_ASSETS:
+        copy_file(relative, "assets/" + Path(relative).name)
     for relative in DOCUMENTS:
         destination = "README.md" if relative == "site/publication_README.md" else relative
         copy_file(relative, destination)
+    copy_file("site/site.webmanifest", "site.webmanifest")
     check()
 
 

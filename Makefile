@@ -1,4 +1,4 @@
-.PHONY: reproduce reproduce-phase-a reproduce-litbench-inventory reproduce-litbench-surface reproduce-litbench-lm reproduce-litbench-embedding reproduce-litbench-reward reproduce-litbench-summary reproduce-litbench-full clean tables figures diff paper-assets paper-check paper-tex paper site publication-bundle publication-check
+.PHONY: reproduce reproduce-phase-a reproduce-litbench-inventory reproduce-litbench-surface reproduce-litbench-lm reproduce-litbench-embedding reproduce-litbench-reward reproduce-litbench-summary reproduce-litbench-full clean tables figures diff paper-assets paper-check paper-tex paper site brand-check publication-bundle publication-check
 
 reproduce: reproduce-phase-a
 
@@ -56,10 +56,13 @@ paper: paper-assets
 site: paper-assets
 	python scripts/build_site.py
 
+brand-check:
+	python scripts/check_brand.py
+
 publication-bundle: site
 	python scripts/check_publication.py --bundle
 
-publication-check: paper-assets site
+publication-check: paper-assets site brand-check
 	python scripts/build_site.py --check
 	python scripts/check_publication.py --bundle
 

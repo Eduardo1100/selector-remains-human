@@ -1,5 +1,8 @@
 # The Selector Remains Human
 
+Published by **Manifold Research** ·
+[Official Manifold site](https://manifoldarena.com)
+
 [Project site](https://eduardo1100.github.io/selector-remains-human/) ·
 [Paper PDF](https://eduardo1100.github.io/selector-remains-human/paper/main.pdf) ·
 [Founder essay](essay.md) ·
@@ -55,7 +58,7 @@ judge.
    concrete candidates, pairwise choices, remembered constraints, and mutation.
    The public [Idea Search artifact](https://eduardo1100.github.io/manifold-studio/)
    exposes the method without exposing the private application.
-3. **Selector research.** I tested compression progress, model surprise,
+3. **Manifold Research.** I tested compression progress, model surprise,
    conditional-LM readouts, TF-IDF and MiniLM domains, centroid and directional
    operators, random-label controls, prompt transfer, surface baselines, and
    bootstrap uncertainty.

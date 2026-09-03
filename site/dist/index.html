@@ -5,41 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta
     name="description"
-    content="Tools should help people curate exemplars, preserve context, express disagreement, compare concrete alternatives, and monitor drift."
+    content="Manifold Research on why prompt-local human preference labels—not generic mechanical proxies—carried the strongest tested selection signal across poetry and LitBench."
   >
+  <meta name="author" content="Eduardo Cortes">
+  <meta name="application-name" content="Manifold Research">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="manifold:brand-version" content="manifold-brand@1.0.0">
+  <meta name="manifold:brand-source" content="https://manifoldarena.com">
+  <link rel="canonical" href="https://eduardo1100.github.io/selector-remains-human/">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/manifold-favicon.png">
+  <link rel="apple-touch-icon" href="assets/manifold-favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Manifold Research">
+  <meta property="og:url" content="https://eduardo1100.github.io/selector-remains-human/">
   <meta property="og:title" content="The Selector Remains Human">
   <meta
     property="og:description"
-    content="Tools should help people curate exemplars, preserve context, express disagreement, compare concrete alternatives, and monitor drift."
+    content="The comparison set carried the strongest tested signal. Research from Manifold on poetry, LitBench, crossed controls, and bounded engineering implications."
   >
-  <meta property="og:image" content="assets/selector_remains_human_social_preview.png">
-  <meta name="theme-color" content="#070b16">
-  <title>The Selector Remains Human</title>
+  <meta property="og:image" content="https://eduardo1100.github.io/selector-remains-human/assets/manifold-research-social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Manifold Research — The Selector Remains Human. The comparison set carried the strongest tested signal.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Selector Remains Human">
+  <meta
+    name="twitter:description"
+    content="The comparison set carried the strongest tested signal. Research from Manifold on poetry, LitBench, and crossed controls."
+  >
+  <meta name="twitter:image" content="https://eduardo1100.github.io/selector-remains-human/assets/manifold-research-social-preview.png">
+  <meta name="twitter:image:alt" content="Manifold Research — The Selector Remains Human.">
+  <meta name="theme-color" content="#060915">
+  <title>The Selector Remains Human · Manifold Research</title>
   <style>
     :root {
       color-scheme: dark;
-      --night: #060912;
-      --night-raised: #0b1020;
-      --panel: rgba(11, 17, 34, 0.82);
-      --panel-strong: rgba(8, 13, 28, 0.95);
-      --panel-soft: rgba(20, 28, 51, 0.62);
-      --line: rgba(151, 186, 225, 0.18);
-      --line-strong: rgba(117, 210, 238, 0.34);
-      --text: #f7f4ee;
-      --text-soft: #b8c3d9;
-      --text-dim: #7f8ba5;
-      --cyan: #18d7ff;
-      --cyan-soft: #8cecff;
-      --orange: #ff8a54;
-      --amber: #ffc56e;
-      --violet: #a78bfa;
-      --mint: #76e7c7;
-      --danger: #ff7777;
-      --shell: min(1180px, calc(100vw - 48px));
-      --sans: "Inter", "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
-      --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-      --mono: "SFMono-Regular", "Cascadia Mono", "Roboto Mono", Consolas, monospace;
-      --shadow: 0 32px 80px rgba(0, 0, 0, 0.34);
+      --night: #060915;
+      --night-deep: #04060f;
+      --night-raised: #0c1224;
+      --action: #0e1a34;
+      --action-hover: #14223f;
+      --action-active: #0a1428;
+      --panel: rgba(125, 155, 220, 0.09);
+      --panel-strong: rgba(125, 155, 220, 0.13);
+      --panel-soft: rgba(125, 155, 220, 0.05);
+      --line: rgba(125, 155, 220, 0.22);
+      --line-strong: rgba(125, 155, 220, 0.34);
+      --text: #f2f6ff;
+      --text-high: #fff;
+      --text-soft: #9fb0d0;
+      --text-dim: #7d8fb3;
+      --cyan: #22d3ee;
+      --blue: #3b82f6;
+      --cyan-soft: #67e8f9;
+      --orange: #fc4c0d;
+      --amber: #fc4c0d;
+      --mint: #34d399;
+      --danger: #fb7185;
+      --gutter: clamp(14px, 2.4vw, 40px);
+      --shell: min(1180px, calc(100vw - clamp(28px, 4.8vw, 80px)));
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --serif: "Iowan Old Style", Georgia, serif;
+      --mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+      --glow: 0 0 54px rgba(34, 211, 238, 0.12);
+      --action-underglow:
+        0 0 0 1px rgba(34, 211, 238, 0.18),
+        -16px 16px 40px rgba(34, 211, 238, 0.10),
+        18px 18px 44px rgba(252, 76, 13, 0.09);
     }
 
     * {
@@ -56,9 +90,9 @@
       min-width: 320px;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at 70% 7%, rgba(255, 119, 64, 0.23), transparent 30rem),
-        radial-gradient(circle at 18% 18%, rgba(70, 177, 255, 0.2), transparent 34rem),
-        radial-gradient(circle at 74% 45%, rgba(83, 43, 150, 0.19), transparent 34rem),
+        radial-gradient(circle at 70% 7%, rgba(252, 76, 13, 0.17), transparent 30rem),
+        radial-gradient(circle at 18% 18%, rgba(34, 211, 238, 0.16), transparent 34rem),
+        radial-gradient(circle at 74% 45%, rgba(59, 130, 246, 0.08), transparent 34rem),
         var(--night);
       color: var(--text);
       font-family: var(--sans);
@@ -78,8 +112,8 @@
     body::before {
       opacity: 0.42;
       background-image:
-        linear-gradient(rgba(127, 164, 203, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(127, 164, 203, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(125, 155, 220, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 155, 220, 0.035) 1px, transparent 1px);
       background-size: 72px 72px;
       mask-image: linear-gradient(to bottom, black, transparent 78%);
     }
@@ -94,6 +128,33 @@
       color: inherit;
     }
 
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: var(--gutter);
+      z-index: 100;
+      min-height: 44px;
+      padding: 10px 15px;
+      border: 1px solid rgba(34, 211, 238, 0.9);
+      border-radius: 10px;
+      background: var(--action);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(-160%);
+      transition: transform 160ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
     .shell {
       width: var(--shell);
       margin-inline: auto;
@@ -104,7 +165,7 @@
       top: 0;
       z-index: 20;
       border-bottom: 1px solid var(--line);
-      background: rgba(5, 8, 17, 0.78);
+      background: rgba(6, 9, 21, 0.86);
       backdrop-filter: blur(22px) saturate(135%);
     }
 
@@ -126,32 +187,11 @@
       letter-spacing: -0.01em;
     }
 
-    .selector-mark {
-      position: relative;
-      width: 29px;
-      height: 28px;
-      flex: 0 0 29px;
-      filter: drop-shadow(0 0 14px rgba(24, 215, 255, 0.28));
-    }
-
-    .selector-mark::before,
-    .selector-mark::after {
-      position: absolute;
-      top: 3px;
-      width: 13px;
-      height: 22px;
-      content: "";
-      background: linear-gradient(180deg, var(--cyan) 0%, var(--orange) 100%);
-    }
-
-    .selector-mark::before {
-      left: 0;
-      clip-path: polygon(0 0, 100% 28%, 100% 72%, 0 100%);
-    }
-
-    .selector-mark::after {
-      right: 0;
-      clip-path: polygon(100% 0, 0 28%, 0 72%, 100% 100%);
+    .brand-mark {
+      width: auto;
+      height: 26px;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 0 14px rgba(34, 211, 238, 0.22));
     }
 
     .brand span:last-child {
@@ -183,9 +223,9 @@
 
     .nav-paper {
       padding: 8px 13px;
-      border: 1px solid var(--line-strong);
+      border: 1px solid rgba(34, 211, 238, 0.55);
       border-radius: 999px;
-      background: rgba(24, 215, 255, 0.06);
+      background: var(--action);
     }
 
     .hero {
@@ -293,18 +333,23 @@
     .button:hover,
     .button:focus-visible {
       transform: translateY(-2px);
-      border-color: var(--line-strong);
+      border-color: rgba(34, 211, 238, 0.9);
+      background: var(--action-hover);
+    }
+
+    .button:active {
+      transform: translateY(0);
+      background: var(--action-active);
     }
 
     .button-primary {
-      border-color: rgba(85, 221, 255, 0.44);
-      background:
-        linear-gradient(130deg, rgba(24, 215, 255, 0.2), rgba(120, 74, 185, 0.14) 60%, rgba(255, 138, 84, 0.17));
-      box-shadow: 0 12px 34px rgba(14, 167, 205, 0.13);
+      border-color: rgba(34, 211, 238, 0.55);
+      background: var(--action);
+      box-shadow: var(--action-underglow);
     }
 
     .button-secondary {
-      background: rgba(255, 255, 255, 0.025);
+      background: rgba(125, 155, 220, 0.035);
       color: var(--text-soft);
     }
 
@@ -325,7 +370,7 @@
       flex: 0 0 7px;
       border-radius: 50%;
       background: var(--mint);
-      box-shadow: 0 0 14px rgba(118, 231, 199, 0.45);
+      box-shadow: 0 0 14px rgba(52, 211, 153, 0.45);
     }
 
     .selector-instrument {
@@ -336,7 +381,7 @@
       border: 1px solid var(--line-strong);
       border-radius: 26px;
       background:
-        linear-gradient(150deg, rgba(25, 38, 68, 0.72), rgba(7, 12, 27, 0.95) 54%),
+        linear-gradient(150deg, rgba(16, 24, 48, 0.72), rgba(4, 6, 15, 0.95) 54%),
         var(--panel);
       box-shadow: var(--shadow), inset 0 1px rgba(255, 255, 255, 0.05);
     }
@@ -349,7 +394,7 @@
       height: 300px;
       border-radius: 50%;
       content: "";
-      background: radial-gradient(circle, rgba(255, 125, 62, 0.34), transparent 68%);
+      background: radial-gradient(circle, rgba(252, 76, 13, 0.30), transparent 68%);
       filter: blur(12px);
     }
 
@@ -384,7 +429,7 @@
       height: 6px;
       border-radius: 50%;
       background: var(--orange);
-      box-shadow: 0 0 13px rgba(255, 138, 84, 0.8);
+      box-shadow: 0 0 13px rgba(252, 76, 13, 0.8);
     }
 
     .instrument-body {
@@ -410,9 +455,9 @@
       min-height: 60px;
       margin-bottom: 9px;
       padding: 11px 13px;
-      border: 1px solid rgba(142, 173, 215, 0.14);
+      border: 1px solid rgba(125, 155, 220, 0.14);
       border-radius: 13px;
-      background: rgba(255, 255, 255, 0.035);
+      background: rgba(125, 155, 220, 0.035);
       display: flex;
       align-items: center;
       gap: 12px;
@@ -457,7 +502,7 @@
       position: relative;
       height: 1px;
       background: linear-gradient(90deg, var(--cyan), var(--orange));
-      box-shadow: 0 0 12px rgba(24, 215, 255, 0.45);
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
     }
 
     .flow-arrow::after {
@@ -476,27 +521,27 @@
       position: relative;
       min-height: 252px;
       padding: 22px;
-      border: 1px solid rgba(24, 215, 255, 0.26);
+      border: 1px solid rgba(34, 211, 238, 0.26);
       border-radius: 20px;
       background:
-        radial-gradient(circle at 76% 20%, rgba(255, 138, 84, 0.2), transparent 45%),
-        linear-gradient(145deg, rgba(20, 41, 69, 0.68), rgba(8, 13, 29, 0.86));
+        radial-gradient(circle at 76% 20%, rgba(252, 76, 13, 0.2), transparent 45%),
+        linear-gradient(145deg, rgba(16, 24, 48, 0.68), rgba(4, 6, 15, 0.86));
     }
 
     .core-ring {
       width: 96px;
       height: 96px;
       margin: 12px auto 19px;
-      border: 1px solid rgba(103, 230, 255, 0.55);
+      border: 1px solid rgba(34, 211, 238, 0.55);
       border-radius: 50%;
       display: grid;
       place-items: center;
       background:
-        radial-gradient(circle, rgba(24, 215, 255, 0.16), transparent 56%),
-        conic-gradient(from 40deg, rgba(24, 215, 255, 0.6), rgba(167, 139, 250, 0.28), rgba(255, 138, 84, 0.64), rgba(24, 215, 255, 0.6));
+        radial-gradient(circle, rgba(34, 211, 238, 0.16), transparent 56%),
+        conic-gradient(from 40deg, rgba(34, 211, 238, 0.62), rgba(59, 130, 246, 0.28), rgba(252, 76, 13, 0.64), rgba(34, 211, 238, 0.62));
       box-shadow:
-        0 0 0 10px rgba(24, 215, 255, 0.025),
-        0 0 36px rgba(24, 215, 255, 0.18);
+        0 0 0 10px rgba(34, 211, 238, 0.025),
+        0 0 36px rgba(34, 211, 238, 0.18);
     }
 
     .core-ring::after {
@@ -533,7 +578,7 @@
       padding: 18px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      background: rgba(3, 7, 17, 0.6);
+      background: rgba(4, 6, 15, 0.6);
     }
 
     .reference-head {
@@ -566,19 +611,33 @@
       aspect-ratio: 1;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.035);
+      background: rgba(125, 155, 220, 0.035);
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .reference-node.preferred::after {
+      content: "+";
+    }
+
+    .reference-node.rejected::after {
+      content: "−";
     }
 
     .reference-node.preferred {
-      border-color: rgba(118, 231, 199, 0.45);
-      background: rgba(118, 231, 199, 0.11);
-      box-shadow: inset 0 -10px 25px rgba(118, 231, 199, 0.05);
+      border-color: rgba(52, 211, 153, 0.45);
+      background: rgba(52, 211, 153, 0.11);
+      box-shadow: inset 0 -10px 25px rgba(52, 211, 153, 0.05);
     }
 
     .reference-node.rejected {
-      border-color: rgba(255, 119, 119, 0.42);
-      background: rgba(255, 119, 119, 0.09);
-      box-shadow: inset 0 -10px 25px rgba(255, 119, 119, 0.04);
+      border-color: rgba(251, 113, 133, 0.42);
+      background: rgba(251, 113, 133, 0.09);
+      box-shadow: inset 0 -10px 25px rgba(251, 113, 133, 0.04);
     }
 
     .instrument-status {
@@ -604,7 +663,7 @@
       padding: 30px 0;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      background: rgba(6, 10, 21, 0.58);
+      background: rgba(6, 9, 21, 0.58);
     }
 
     .metric-grid {
@@ -693,8 +752,8 @@
       border: 1px solid var(--line-strong);
       border-radius: 28px;
       background:
-        radial-gradient(circle at 78% 15%, rgba(255, 138, 84, 0.16), transparent 30rem),
-        linear-gradient(150deg, rgba(21, 31, 58, 0.72), rgba(6, 10, 22, 0.92));
+        radial-gradient(circle at 78% 15%, rgba(252, 76, 13, 0.14), transparent 30rem),
+        linear-gradient(150deg, rgba(16, 24, 48, 0.72), rgba(4, 6, 15, 0.92));
       box-shadow: var(--shadow);
     }
 
@@ -718,9 +777,18 @@
       font-size: 14px;
     }
 
+    .figure-scroll {
+      max-width: 100%;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      touch-action: pan-x;
+      scrollbar-color: var(--line-strong) var(--night-raised);
+      scrollbar-width: thin;
+    }
+
     .figure-frame {
       padding: clamp(12px, 2vw, 22px);
-      border: 1px solid rgba(205, 226, 247, 0.15);
+      border: 1px solid rgba(125, 155, 220, 0.22);
       border-radius: 18px;
       background: #f7f7f4;
     }
@@ -740,6 +808,16 @@
       font-size: 11px;
     }
 
+    .mobile-figure-hint {
+      display: none;
+      margin: 10px 0 0;
+      color: var(--cyan-soft);
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
     .control-ledger {
       margin-top: 18px;
       display: grid;
@@ -752,7 +830,7 @@
       padding: 20px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: rgba(5, 10, 22, 0.62);
+      background: rgba(6, 9, 21, 0.62);
     }
 
     .control-card span {
@@ -793,7 +871,7 @@
       height: 42vw;
       border-radius: 50%;
       content: "";
-      background: radial-gradient(circle, rgba(24, 215, 255, 0.11), transparent 65%);
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.11), transparent 65%);
       pointer-events: none;
     }
 
@@ -810,7 +888,7 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       background:
-        linear-gradient(145deg, rgba(19, 28, 51, 0.68), rgba(7, 12, 27, 0.82)),
+        linear-gradient(145deg, rgba(16, 24, 48, 0.68), rgba(4, 6, 15, 0.82)),
         var(--panel);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.035);
       transition:
@@ -823,8 +901,8 @@
       transform: translateY(-4px);
       border-color: var(--line-strong);
       background:
-        radial-gradient(circle at 88% 7%, rgba(24, 215, 255, 0.1), transparent 45%),
-        linear-gradient(145deg, rgba(22, 34, 61, 0.78), rgba(7, 12, 27, 0.9));
+        radial-gradient(circle at 88% 7%, rgba(34, 211, 238, 0.1), transparent 45%),
+        linear-gradient(145deg, rgba(16, 24, 48, 0.78), rgba(4, 6, 15, 0.9));
     }
 
     .framework-index {
@@ -875,8 +953,8 @@
     .relocation-copy {
       padding: clamp(30px, 5vw, 60px);
       background:
-        radial-gradient(circle at 20% 20%, rgba(24, 215, 255, 0.18), transparent 65%),
-        linear-gradient(155deg, rgba(17, 29, 53, 0.9), rgba(6, 10, 21, 0.96));
+        radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.15), transparent 65%),
+        linear-gradient(155deg, rgba(16, 24, 48, 0.9), rgba(4, 6, 15, 0.96));
     }
 
     .relocation-copy h2 {
@@ -904,7 +982,7 @@
       padding: 19px 20px;
       border: 1px solid var(--line);
       border-radius: 15px;
-      background: rgba(255, 255, 255, 0.025);
+      background: rgba(125, 155, 220, 0.035);
       display: grid;
       grid-template-columns: 40px 1fr;
       gap: 14px;
@@ -945,9 +1023,9 @@
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       background:
-        radial-gradient(circle at 88% 20%, rgba(255, 138, 84, 0.1), transparent 34rem),
-        radial-gradient(circle at 4% 85%, rgba(24, 215, 255, 0.1), transparent 34rem),
-        rgba(6, 10, 21, 0.58);
+        radial-gradient(circle at 88% 20%, rgba(252, 76, 13, 0.09), transparent 34rem),
+        radial-gradient(circle at 4% 85%, rgba(34, 211, 238, 0.09), transparent 34rem),
+        rgba(6, 9, 21, 0.58);
     }
 
     .origin-timeline {
@@ -964,7 +1042,7 @@
       border: 1px solid var(--line);
       border-radius: 19px;
       background:
-        linear-gradient(150deg, rgba(19, 29, 54, 0.78), rgba(6, 11, 24, 0.9)),
+        linear-gradient(150deg, rgba(16, 24, 48, 0.78), rgba(4, 6, 15, 0.9)),
         var(--panel);
     }
 
@@ -972,7 +1050,7 @@
       position: absolute;
       right: -12px;
       bottom: -36px;
-      color: rgba(151, 186, 225, 0.055);
+      color: rgba(125, 155, 220, 0.055);
       content: attr(data-step);
       font-family: var(--serif);
       font-size: 140px;
@@ -1010,7 +1088,7 @@
 
     .origin-card a {
       color: var(--cyan-soft);
-      text-decoration-color: rgba(140, 236, 255, 0.35);
+      text-decoration-color: rgba(34, 211, 238, 0.35);
       text-underline-offset: 3px;
     }
 
@@ -1019,7 +1097,7 @@
       padding: clamp(26px, 4vw, 44px);
       border: 1px solid var(--line-strong);
       border-radius: 22px;
-      background: rgba(5, 10, 22, 0.72);
+      background: rgba(6, 9, 21, 0.72);
       display: grid;
       grid-template-columns: 0.72fr 1.28fr;
       gap: clamp(28px, 5vw, 64px);
@@ -1050,7 +1128,7 @@
       padding: 18px;
       border: 1px solid var(--line);
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.025);
+      background: rgba(125, 155, 220, 0.035);
     }
 
     .build-item b {
@@ -1075,8 +1153,8 @@
       border: 1px solid var(--line-strong);
       border-radius: 26px;
       background:
-        radial-gradient(circle at 82% 16%, rgba(255, 138, 84, 0.18), transparent 34rem),
-        linear-gradient(145deg, rgba(15, 26, 48, 0.92), rgba(6, 10, 22, 0.96));
+        radial-gradient(circle at 82% 16%, rgba(252, 76, 13, 0.15), transparent 34rem),
+        linear-gradient(145deg, rgba(16, 24, 48, 0.92), rgba(4, 6, 15, 0.96));
       box-shadow: var(--shadow);
     }
 
@@ -1164,7 +1242,7 @@
       padding: 24px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      background: rgba(10, 16, 31, 0.72);
+      background: rgba(12, 18, 36, 0.72);
     }
 
     .boundary-label {
@@ -1203,9 +1281,9 @@
       border: 1px solid var(--line-strong);
       border-radius: 28px;
       background:
-        radial-gradient(circle at 83% 25%, rgba(255, 138, 84, 0.27), transparent 30rem),
-        radial-gradient(circle at 12% 80%, rgba(24, 215, 255, 0.18), transparent 32rem),
-        linear-gradient(140deg, rgba(19, 30, 55, 0.94), rgba(7, 11, 25, 0.96));
+        radial-gradient(circle at 83% 25%, rgba(252, 76, 13, 0.20), transparent 30rem),
+        radial-gradient(circle at 12% 80%, rgba(34, 211, 238, 0.15), transparent 32rem),
+        linear-gradient(140deg, rgba(16, 24, 48, 0.94), rgba(4, 6, 15, 0.96));
       box-shadow: var(--shadow);
     }
 
@@ -1215,13 +1293,13 @@
       right: 7%;
       width: 210px;
       height: 210px;
-      border: 1px solid rgba(99, 226, 255, 0.22);
+      border: 1px solid rgba(34, 211, 238, 0.22);
       border-radius: 50%;
       content: "";
       transform: translateY(-50%);
       box-shadow:
-        0 0 0 32px rgba(24, 215, 255, 0.02),
-        0 0 0 64px rgba(24, 215, 255, 0.015);
+        0 0 0 32px rgba(34, 211, 238, 0.02),
+        0 0 0 64px rgba(34, 211, 238, 0.015);
     }
 
     .paper-card h2 {
@@ -1268,6 +1346,16 @@
 
     .footer-grid a {
       color: var(--text-soft);
+    }
+
+    .footer-publisher {
+      display: block;
+      margin-top: 12px;
+    }
+
+    .footer-publisher a {
+      color: var(--cyan-soft);
+      text-underline-offset: 3px;
     }
 
     @media (max-width: 980px) {
@@ -1329,10 +1417,6 @@
     }
 
     @media (max-width: 700px) {
-      :root {
-        --shell: min(100% - 30px, 1180px);
-      }
-
       body {
         font-size: 16px;
       }
@@ -1345,8 +1429,25 @@
         display: none;
       }
 
-      .brand span:last-child {
-        display: none;
+      .header-inner {
+        gap: 10px;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 12px;
+      }
+
+      .brand-mark {
+        height: 22px;
+      }
+
+      .nav-paper {
+        min-height: 44px;
+        padding-inline: 11px;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
       }
 
       .hero {
@@ -1360,6 +1461,14 @@
       .selector-instrument {
         padding: 17px;
         border-radius: 20px;
+      }
+
+      .figure-frame {
+        width: 720px;
+      }
+
+      .mobile-figure-hint {
+        display: block;
       }
 
       .instrument-body {
@@ -1450,13 +1559,28 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    @media (forced-colors: active), (prefers-contrast: more) {
+      body::before,
+      body::after,
+      .framework-section::before,
+      .selector-instrument::before,
+      .paper-card::after {
+        display: none;
+      }
+
+      .brand-mark {
+        filter: none;
+      }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to research content</a>
   <header class="site-header">
     <div class="header-inner shell">
       <a class="brand" href="#top" aria-label="Manifold Research home">
-        <span class="selector-mark" aria-hidden="true"></span>
+        <img class="brand-mark" src="assets/manifold-mark.png" alt="" width="234" height="181">
         <span><strong>Manifold</strong> Research</span>
       </a>
       <nav class="header-nav" aria-label="Primary navigation">
@@ -1470,7 +1594,8 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
+    <span id="top" aria-hidden="true"></span>
     <section class="hero shell" aria-labelledby="page-title">
       <div class="hero-copy">
         <p class="eyebrow">Independent research + product architecture / Eduardo Cortes / July 2026</p>
@@ -1601,12 +1726,20 @@
             value function.
           </p>
         </div>
-        <div class="figure-frame">
-          <img
-            src="assets/selector_remains_human_figure1b.svg"
-            alt="Horizontal point-and-interval plot showing that same-prompt preference labels create a strong transductive boundary, whereas random same-prompt and cross-prompt label domains remain near chance; vertical reference lines mark chance and the surface-format baseline."
-          >
+        <div
+          class="figure-scroll"
+          role="region"
+          aria-label="Primary results figure; scroll horizontally on small screens"
+          tabindex="0"
+        >
+          <div class="figure-frame">
+            <img
+              src="assets/selector_remains_human_figure1b.svg"
+              alt="Horizontal point-and-interval plot showing that same-prompt preference labels create a strong transductive boundary, whereas random same-prompt and cross-prompt label domains remain near chance; vertical reference lines mark chance and the surface-format baseline."
+            >
+          </div>
         </div>
+        <p class="mobile-figure-hint">Scroll horizontally to inspect labels and intervals.</p>
         <p class="figure-note">
           <span class="legend-dot" aria-hidden="true"></span>
           <span>
@@ -1815,7 +1948,7 @@
             </p>
           </article>
           <article class="origin-card" data-step="03">
-            <span class="origin-kicker">Selector research</span>
+            <span class="origin-kicker">Manifold Research</span>
             <h3>I tried to remove the remaining judgment cost.</h3>
             <p>
               I tested compression progress, model surprise, conditional
@@ -1992,7 +2125,12 @@
     <div class="footer-grid shell">
       <p>
         The Selector Remains Human<br>
-        Eduardo Cortes · July 2026
+        Manifold Research · Eduardo Cortes · July 2026
+        <span class="footer-publisher">
+          <a href="https://manifoldarena.com" rel="noreferrer">
+            Visit Manifold ↗
+          </a>
+        </span>
       </p>
       <p>
         Repository software: <a href="LICENSE">MIT License</a>. Original
