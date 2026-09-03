@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "brand_version": "manifold-brand@1.0.0",
-  "canonical_source": "https://manifold-official.eduardo11.chatgpt.site",
-  "canonical_manifest": "https://manifold-official.eduardo11.chatgpt.site/brand/manifest.json",
+  "canonical_source": "https://manifoldarena.com",
+  "canonical_manifest": "https://manifoldarena.com/brand/manifest.json",
   "synchronized_at": "2026-07-27",
   "surface": {
     "name": "Manifold Research",

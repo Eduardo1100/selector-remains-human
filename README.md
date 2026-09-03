@@ -1,7 +1,7 @@
 # The Selector Remains Human
 
 Published by **Manifold Research** ·
-[Official Manifold site](https://manifold-official.eduardo11.chatgpt.site)
+[Official Manifold site](https://manifoldarena.com)
 
 [Project site](https://eduardo1100.github.io/selector-remains-human/) ·
 [Paper PDF](https://eduardo1100.github.io/selector-remains-human/paper/main.pdf) ·

@@ -4,10 +4,10 @@ Brand version: `manifold-brand@1.0.0`
 
 Synchronized: `2026-07-27`
 
-Canonical source: [Manifold](https://manifold-official.eduardo11.chatgpt.site)
+Canonical source: [Manifold](https://manifoldarena.com)
 
 Canonical manifest:
-[`/brand/manifest.json`](https://manifold-official.eduardo11.chatgpt.site/brand/manifest.json)
+[`/brand/manifest.json`](https://manifoldarena.com/brand/manifest.json)
 
 This repository is a downstream Manifold surface. The official Manifold site is
 the source of truth for shared assets, tokens, naming, and behavior.

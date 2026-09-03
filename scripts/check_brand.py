@@ -31,7 +31,7 @@ def png_dimensions(path: Path) -> tuple[int, int]:
 def main() -> None:
     manifest = json.loads(PROVENANCE.read_text(encoding="utf-8"))
     assert manifest["brand_version"] == "manifold-brand@1.0.0"
-    assert manifest["canonical_source"] == "https://manifold-official.eduardo11.chatgpt.site"
+    assert manifest["canonical_source"] == "https://manifoldarena.com"
 
     for asset in manifest["assets"]:
         path = ROOT / asset["local_asset_path"]
@@ -53,7 +53,7 @@ def main() -> None:
         "Manifold Research",
         "The Selector Remains Human",
         'content="manifold-brand@1.0.0"',
-        "https://manifold-official.eduardo11.chatgpt.site",
+        "https://manifoldarena.com",
         "assets/manifold-mark.png",
         "assets/manifold-favicon.png",
         "assets/manifold-research-social-preview.png",
