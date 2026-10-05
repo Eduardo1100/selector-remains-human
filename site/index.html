@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta
     name="description"
-    content="Tools should help people curate exemplars, preserve context, express disagreement, compare concrete alternatives, and monitor drift."
+    content="Can AI replace human creative judgment? Experiments on poetry and creative text found that the strongest preference signal depended on human examples for the same prompt."
   >
   <meta property="og:title" content="The Selector Remains Human">
   <meta
     property="og:description"
-    content="Tools should help people curate exemplars, preserve context, express disagreement, compare concrete alternatives, and monitor drift."
+    content="Can AI replace human creative judgment? Experiments on poetry and creative text found that the strongest preference signal depended on human examples for the same prompt."
   >
   <meta property="og:image" content="assets/selector_remains_human_social_preview.png">
   <meta name="theme-color" content="#070b16">
@@ -1450,6 +1450,38 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* Reading hierarchy and responsive legibility. */
+    .header-nav { font-size: .875rem; gap: 22px; }
+    .hero { min-height: auto; padding: clamp(48px, 6vw, 82px) 0 52px; gap: clamp(32px, 5vw, 68px); }
+    h1 { font-size: clamp(4rem, 6.4vw, 6.2rem); line-height: .98; letter-spacing: -.05em; }
+    .hero-deck { font-size: 1.125rem; line-height: 1.65; margin-bottom: 24px; }
+    .hero-deck strong { display: block; margin-bottom: 12px; }
+    .hero-note, .figure-note, .product-boundary { font-size: .875rem; line-height: 1.6; }
+    .eyebrow, .micro-label, .panel-label, .metric-label, .framework-index,
+    .status-chip, .boundary-label { font-size: .75rem; letter-spacing: .09em; }
+    .live-signal, .candidate-copy small, .selector-core p,
+    .reference-head span, .reference-head b, .instrument-foot { font-size: .8125rem; line-height: 1.5; }
+    .candidate-copy b { font-size: .9375rem; }
+    .section-intro p { max-width: 66ch; }
+    .section-intro h2 { max-width: 24ch; text-wrap: balance; }
+    .control-card p, .framework-item p, .origin-card p,
+    .product-card p, .boundary-card p, .build-item p { font-size: 1rem; line-height: 1.65; }
+    .content-section { padding-block: clamp(52px, 6vw, 84px); }
+    a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 5px; }
+    .figure-frame img { width: 100%; height: auto; }
+    @media (max-width: 700px) {
+      .hero { padding-top: 36px; gap: 32px; }
+      h1 { font-size: clamp(3.15rem, 14vw, 4.8rem); line-height: 1; }
+      .hero-deck { font-size: 1rem; }
+      .hero-actions { align-items: stretch; }
+      .hero-actions .button { white-space: normal; text-align: center; }
+      .instrument-head, .reference-head { flex-wrap: wrap; gap: 8px; }
+      .selector-instrument { min-width: 0; }
+      .section-intro h2 { font-size: clamp(2rem, 8vw, 3rem); }
+      .header-nav { font-size: .8125rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -1465,7 +1497,7 @@
         <a href="#origin">Origin</a>
         <a href="#product">Product</a>
         <a href="#bounds">Boundaries</a>
-        <a class="nav-paper" href="paper/main.pdf">Read paper ↗</a>
+        <a class="nav-paper" href="paper/main.pdf">Read paper</a>
       </nav>
     </div>
   </header>
@@ -1473,49 +1505,43 @@
   <main id="top">
     <section class="hero shell" aria-labelledby="page-title">
       <div class="hero-copy">
-        <p class="eyebrow">Independent research + product architecture / Eduardo Cortes / July 2026</p>
+        <p class="eyebrow">Eduardo Cortes / Creative selection research / July 2026</p>
         <h1 id="page-title">The Selector <span class="human">Remains Human</span></h1>
         <p class="hero-deck">
-          <strong>Tools should help people curate exemplars, preserve context,
-          express disagreement, compare concrete alternatives, and monitor
-          drift.</strong> That is the main engineering implication of this
-          project. I reached it after an AI-native media pipeline exposed
-          selection as the bottleneck, then generic mechanical proxies failed
-          to replace human-shaped judgment across poetry and LitBench.
+          <strong>AI could generate the work. Could it also decide what was worth making?</strong>
+          I tested automated selectors on human-rated poetry and creative-text comparisons.
+          The strongest preference signal came from specific human examples for the same writing prompt.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="paper/main.pdf">Download working paper <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="#origin">See why I built it <span aria-hidden="true">↓</span></a>
+          <a class="button button-primary" href="#evidence">See the findings</a>
+          <a class="button button-secondary" href="paper/main.pdf">Read the working paper</a>
         </div>
         <p class="hero-note">
           <span class="dot" aria-hidden="true"></span>
-          <span>
-            The 87.7% result shown below is a transductive, same-prompt probe built
-            from other test labels. It is evidence of a strong local boundary—not
-            a transferable creative evaluator.
-          </span>
+          <span>Working paper. The 87.7% result is a transductive, same-prompt probe:
+          it uses human preference labels from other test examples, rather than measuring a general creative evaluator.</span>
         </p>
       </div>
 
       <aside class="selector-instrument" aria-label="Generator and selector framework diagram">
         <div class="instrument-head">
-          <span class="panel-label">Generator / selector separation</span>
-          <span class="live-signal"><i aria-hidden="true"></i> Value source external</span>
+          <span class="panel-label">Generation and judgment</span>
+          <span class="live-signal"><i aria-hidden="true"></i> Human preference</span>
         </div>
         <div class="instrument-body">
           <div class="instrument-stage">
-            <p class="micro-label">01 / Generator</p>
+            <p class="micro-label">01 / Generate alternatives</p>
             <div class="candidate">
               <span class="candidate-index">A</span>
-              <span class="candidate-copy"><b>Realized possibility</b><small>proposal, not verdict</small></span>
+              <span class="candidate-copy"><b>Creative candidate</b><small>An alternative to compare</small></span>
             </div>
             <div class="candidate">
               <span class="candidate-index">B</span>
-              <span class="candidate-copy"><b>Realized possibility</b><small>proposal, not verdict</small></span>
+              <span class="candidate-copy"><b>Creative candidate</b><small>An alternative to compare</small></span>
             </div>
             <div class="candidate">
               <span class="candidate-index">C</span>
-              <span class="candidate-copy"><b>Realized possibility</b><small>proposal, not verdict</small></span>
+              <span class="candidate-copy"><b>Creative candidate</b><small>An alternative to compare</small></span>
             </div>
           </div>
 
@@ -1524,15 +1550,15 @@
           <div class="selector-core">
             <p class="micro-label">02 / Independent judgment</p>
             <div class="core-ring" aria-hidden="true"></div>
-            <h2>Selector</h2>
-            <p>A source of value-ordering whose authority does not derive from the generator.</p>
+            <h2>Selection</h2>
+            <p>Judgment grounded in what people prefer in a particular context.</p>
           </div>
         </div>
 
         <div class="reference-set">
           <div class="reference-head">
-            <b>Human-shaped reference set</b>
-            <span>Specific comparisons / local ecology</span>
+            <b>Human preference examples</b>
+            <span>Same prompt / specific comparisons</span>
           </div>
           <div class="reference-pool" aria-label="Preferred and rejected exemplars">
             <span class="reference-node preferred" title="Preferred exemplar"></span>
@@ -1582,23 +1608,23 @@
     <section class="content-section shell" id="evidence" aria-labelledby="evidence-title">
       <div class="section-intro">
         <p class="eyebrow">Evidence / what the experiments changed</p>
-        <h2 id="evidence-title">The metric was not the miracle. The comparison set was.</h2>
+        <h2 id="evidence-title">The strongest signal depended on human preference examples.</h2>
         <p>
-          A conditional language-model readout initially looked like a strong
-          compression-based selector. A crossed operator control changed the
-          interpretation: directional MiniLM performed better on the identical
-          rows, while centroid pooling failed.
+          A model initially appeared to select creative writing through
+          conditional cross-predictability. Comparing methods on the same
+          examples changed the interpretation: directional MiniLM did better,
+          while averaging preference examples into a centroid lost the signal.
         </p>
       </div>
 
       <article class="evidence-stage">
         <div class="evidence-head">
-          <h3>The strong boundary requires prompt-local preference labels.</h3>
+          <h3>Same prompt. Human labels. Specific comparisons.</h3>
           <p>
-            Randomizing labels within the same prompt collapses to chance.
-            Moving real preference labels across prompts also collapses toward
-            chance. The result is local and label-defined, not a free-standing
-            value function.
+            The selector compared each candidate with examples people had
+            preferred or rejected for the same writing prompt. Randomizing
+            those labels or using examples from other prompts brought
+            performance near chance. Contextual human judgments carried the signal.
           </p>
         </div>
         <div class="figure-frame">
@@ -1657,7 +1683,7 @@
       <div class="shell">
         <div class="section-intro">
           <p class="eyebrow">Framework / anatomy of a selector</p>
-          <h2 id="framework-title">Creativity as search without a writable value function.</h2>
+          <h2 id="framework-title">Generating possibilities and judging them are different tasks.</h2>
           <p>
             This is an engineering model, not a universal definition: a generator
             proposes; a selector supplies value-ordering. The selector is defined
@@ -1693,7 +1719,7 @@
             <p>
               The world can ground proofs, compilers, and win conditions.
               Internal proxies measure features. In open-ended aesthetics,
-              <strong>minds remain the tested source of value-ordering.</strong>
+              <strong>human preferences remain the tested source of value-ordering.</strong>
             </p>
           </article>
 
@@ -1786,53 +1812,44 @@
           <p class="eyebrow">Founder path / from production bottleneck to company architecture</p>
           <h2 id="origin-title">I built this because generation stopped being the bottleneck.</h2>
           <p>
-            This was not research invented after the company. It records the
-            sequence of systems I built, the shortcut I hoped would work, the
-            controls that broke that interpretation, and the product decision
-            that followed.
+            I automated research, ideation, and much of media production.
+            Choosing, revising, and approving the work still required my judgment.
+            That question led me through selector experiments, Idea Search, and
+            two successive Manifold theses.
           </p>
         </div>
 
         <div class="origin-timeline">
           <article class="origin-card" data-step="01">
-            <span class="origin-kicker">AI-native production pipeline</span>
-            <h3>Abundance exposed the selection problem.</h3>
-            <p>
-              I assembled a reusable pipeline for research, music, image and
-              video synthesis, editing, captioning, and release packaging.
-              Generators could produce many plausible directions; the expensive
-              decision became which direction deserved another round of work.
-            </p>
+            <span class="origin-kicker">AI-native media production</span>
+            <h3>I automated the path from research to release.</h3>
+            <p>I built a mostly automated workflow for research, ideation, music,
+            video, editing, captions, and release packaging. I still chose outputs,
+            revised lyrics, rejected weak takes, and approved releases.
+            <a href="https://ai-native-production-archive.eduardo11.chatgpt.site/" rel="noreferrer">See the released work</a>.</p>
           </article>
           <article class="origin-card" data-step="02">
-            <span class="origin-kicker">Manifold Studio / Idea Search</span>
-            <h3>I separated proposing from judging.</h3>
-            <p>
-              I built a private selection system around concrete candidates,
-              pairwise judgments, remembered constraints, and mutation. The
-              public <a href="https://eduardo1100.github.io/manifold-studio/" rel="noreferrer">Idea Search artifact ↗</a>
-              shows the method without exposing the private application.
-            </p>
+            <span class="origin-kicker">Selector research</span>
+            <h3>Could a selector replace those decisions?</h3>
+            <p>I tested compression, model surprise, conditional cross-predictability,
+            and other automated readouts. The strongest useful signal depended on
+            human preference examples for the same prompt; transfer controls exposed
+            the limits of generalizing that judgment.</p>
           </article>
           <article class="origin-card" data-step="03">
-            <span class="origin-kicker">Selector research</span>
-            <h3>I tried to remove the remaining judgment cost.</h3>
-            <p>
-              I tested compression progress, model surprise, conditional
-              language-model readouts, surface controls, TF-IDF, MiniLM,
-              centroid pooling, directional instance-level operators, random
-              labels, cross-prompt transfer, and bootstrap uncertainty.
-            </p>
+            <span class="origin-kicker">Idea Search</span>
+            <h3>I made human critique into durable memory.</h3>
+            <p>Those findings shaped a system that attaches critique to concrete
+            candidates and carries only accepted guidance into later creative searches.
+            <a href="https://eduardo1100.github.io/manifold-studio/" rel="noreferrer">Explore Idea Search</a>.</p>
           </article>
           <article class="origin-card" data-step="04">
             <span class="origin-kicker">Manifold</span>
-            <h3>The selector became a social layer.</h3>
-            <p>
-              The product leap was not “build a better score.” It was to let
-              creators define bounded decisions, let audiences compare actual
-              possibilities, record commitments and fulfillment, and make each
-              consequence part of a persistent property history.
-            </p>
+            <h3>The question expanded to a shared audience.</h3>
+            <p>My first thesis was a production-neutral platform for human creators
+            of AI-generated media. I later pivoted toward a society of evolving AI
+            creator personas, whose worker agents could carry collective audience
+            judgment into new work.</p>
           </article>
         </div>
 
@@ -1874,43 +1891,32 @@
       <article class="product-panel">
         <div class="product-head">
           <div>
-            <p class="eyebrow">Research → product / what changed in Manifold</p>
-            <h2 id="product-title">Build after the generator.</h2>
+            <p class="eyebrow">Research into product design</p>
+            <h2 id="product-title">Carry human judgment into later work.</h2>
           </div>
-          <p>
-            Generators are becoming abundant and interchangeable. Manifold is
-            designed around the layer they do not own: who has authority, which
-            possibilities a community can influence, what was promised, and
-            what the eventual release proves happened.
-          </p>
+          <p>The findings led me to preserve the context in which people judge
+          creative work, so it can guide later production. Idea Search does this
+          for an individual creator. Manifold extends the question to a shared audience.</p>
         </div>
         <div class="product-grid">
           <article class="product-card">
             <span>01 / Concrete comparison</span>
-            <h3>Judge realized alternatives, not an abstract prompt.</h3>
-            <p>
-              Audience decisions operate on specific candidate scenes, songs,
-              characters, or directions. This preserves the instance-level,
-              local structure that pooling erased in the experiments.
-            </p>
+            <h3>Keep the alternatives visible.</h3>
+            <p>People compare specific candidates, drafts, and directions.
+            Their critique stays attached to the work and context that prompted it.</p>
           </article>
           <article class="product-card">
-            <span>02 / Explicit authority</span>
-            <h3>Model decision rights instead of treating every vote as truth.</h3>
-            <p>
-              Creators define what is open, the resolution rule, whether the
-              result is binding, and which approval boundaries remain. Audience
-              preference is local governance—not universal artistic quality.
-            </p>
+            <span>02 / Human judgment</span>
+            <h3>Preserve what was accepted, changed, or rejected.</h3>
+            <p>In Idea Search, guidance becomes memory only after a human decision.
+            The record retains both the model's proposal and the person's correction.</p>
           </article>
           <article class="product-card">
-            <span>03 / Visible consequence</span>
-            <h3>Turn selection into persistent property history.</h3>
-            <p>
-              A Loop Contract records the options, commitment, decision,
-              fulfillment state, and descendant release. The audience can see
-              what its action changed instead of disappearing into a metric.
-            </p>
+            <span>03 / Continuing production</span>
+            <h3>Let feedback accumulate across projects.</h3>
+            <p>Manifold's goal is for audience criticism, interpretation, and
+            collective judgment to shape later work, with a trace of how worker
+            agents handled each contribution.</p>
           </article>
         </div>
         <p class="product-boundary">
@@ -1924,8 +1930,8 @@
 
     <section class="content-section shell" id="bounds" aria-labelledby="bounds-title">
       <div class="section-intro">
-        <p class="eyebrow">Scientific boundary / evidence before mythology</p>
-        <h2 id="bounds-title">A useful negative—not an impossibility proof.</h2>
+        <p class="eyebrow">Results, implications, and limits</p>
+        <h2 id="bounds-title">What the experiments establish.</h2>
         <p>
           The framework is a disciplined interpretation of two datasets and a
           family of tested mechanisms. The site keeps established results,
@@ -1953,7 +1959,7 @@
         </article>
         <article class="boundary-card not-claimed">
           <p class="boundary-label">Not claimed</p>
-          <h3>No mechanical value signal can ever exist.</h3>
+          <h3>A proof that judgment can never be automated.</h3>
           <p>
             The experiments reject the tested mechanisms as sufficient
             label-free selectors. They do not prove that every possible
@@ -1974,7 +1980,7 @@
           interpretation, and the exact reproduction path.
         </p>
         <div class="paper-actions">
-          <a class="button button-primary" href="paper/main.pdf">Download PDF <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="paper/main.pdf">Download PDF</a>
           <a class="button button-secondary" href="paper/main.md">Manuscript source</a>
           <a class="button button-secondary" href="essay.md">Founder essay</a>
           <a class="button button-secondary" href="docs/reproducibility.md">Reproduce</a>
@@ -1982,7 +1988,7 @@
             class="button button-secondary"
             href="https://github.com/Eduardo1100/selector-remains-human"
             rel="noreferrer"
-          >Repository ↗</a>
+          >Repository</a>
         </div>
       </article>
     </section>
@@ -2005,3 +2011,4 @@
   </footer>
 </body>
 </html>
+
