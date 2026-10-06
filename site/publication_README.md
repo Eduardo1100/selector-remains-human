@@ -13,3 +13,6 @@ The landing page links to the bundled relative PDF at paper/main.pdf. Repository
 software is MIT-licensed; original authored content is CC BY 4.0. Third-party
 datasets, frozen external artifacts, model outputs, and material with its own
 terms are excluded from those grants.
+
+The Manifold Research header and favicon use the official Manifold
+encoder/decoder mark. See `assets/brand-provenance.json` for its provenance.

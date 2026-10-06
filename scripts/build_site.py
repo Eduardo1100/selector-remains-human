@@ -13,6 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
 DIST = SITE / "dist"
 ASSETS = [
+    "site/assets/manifold-logo.svg",
+    "site/assets/manifold-favicon.svg",
+    "site/assets/manifold-mark.png",
+    "site/assets/manifold-favicon.png",
+    "site/assets/brand-provenance.json",
     "paper/figures/selector_remains_human_figure1a.svg",
     "paper/figures/selector_remains_human_figure1a.png",
     "paper/figures/selector_remains_human_figure1b.svg",

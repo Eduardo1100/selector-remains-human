@@ -1,0 +1,24 @@
+{
+  "brand_version": "manifold-brand@2.0.0",
+  "adopted_at": "2026-10-06",
+  "canonical_manifest": "https://manifoldarena.com/brand/manifest.json",
+  "design_origin": "Manifold Research header, Eduardo1100/selector-remains-human@b688292b8b768f6be192a253708295e47aefb890",
+  "assets": [
+    {
+      "path": "manifold-logo.svg",
+      "sha256": "5058c987c2118c2773c627fdbfcd637e5126dbc4f6fb837ba710f2716cfb4425"
+    },
+    {
+      "path": "manifold-favicon.svg",
+      "sha256": "ce8920a6087a6845f04ae6d21e334f80b5e7a842f5761b714d35744bea425a24"
+    },
+    {
+      "path": "manifold-mark.png",
+      "sha256": "e4e63f57d85a99ff1d2605ef7fd31255516a6a3200d4945e6ee5ab7c25cff48e"
+    },
+    {
+      "path": "manifold-favicon.png",
+      "sha256": "3bd9832407ea561edd3609886b100b9119b85edb435b2691d41ebb0c6641abc4"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="220" viewBox="0 3 29 22" role="img" aria-labelledby="manifold-logo-title manifold-logo-desc">
+  <title id="manifold-logo-title">Manifold</title>
+  <desc id="manifold-logo-desc">The official Manifold mark: two mirrored tapered shapes, cyan at the top and orange at the bottom.</desc>
+  <defs>
+    <linearGradient id="manifold-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="3" x2="0" y2="25">
+      <stop offset="0" stop-color="#18d7ff"/>
+      <stop offset="1" stop-color="#ff8a54"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#manifold-gradient)">
+    <path d="M0 3 13 9.16 13 18.84 0 25Z"/>
+    <path d="M29 3 16 9.16 16 18.84 29 25Z"/>
+  </g>
+</svg>

@@ -126,3 +126,9 @@ manuscript, documentation, essay, site prose, and authored tables and figures
 are available under [CC BY 4.0](LICENSE-CONTENT.md). Third-party datasets,
 frozen external artifacts, model outputs, and material carrying its own terms
 are excluded from both grants; see [LICENSE-CONTENT.md](LICENSE-CONTENT.md).
+
+## Manifold identity
+
+The Research header's encoder/decoder mark became the official Manifold logo
+on 2026-10-06. Its exact vector source and exports live in `site/assets/`;
+`brand-provenance.json` records the shared identity and checksums.

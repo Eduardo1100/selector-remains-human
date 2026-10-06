@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32">
+  <title>Manifold</title>
+  <defs>
+    <linearGradient id="manifold-gradient" gradientUnits="userSpaceOnUse" x1="0" y1="3" x2="0" y2="25">
+      <stop offset="0" stop-color="#18d7ff"/>
+      <stop offset="1" stop-color="#ff8a54"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(1.5 2)" fill="url(#manifold-gradient)">
+    <path d="M0 3 13 9.16 13 18.84 0 25Z"/>
+    <path d="M29 3 16 9.16 16 18.84 29 25Z"/>
+  </g>
+</svg>

@@ -14,6 +14,7 @@
   >
   <meta property="og:image" content="assets/selector_remains_human_social_preview.png">
   <meta name="theme-color" content="#070b16">
+  <link rel="icon" type="image/svg+xml" href="assets/manifold-favicon.svg">
   <title>The Selector Remains Human</title>
   <style>
     :root {
@@ -126,32 +127,13 @@
       letter-spacing: -0.01em;
     }
 
-    .selector-mark {
-      position: relative;
+    .manifold-mark {
+      display: block;
       width: 29px;
       height: 28px;
       flex: 0 0 29px;
+      object-fit: contain;
       filter: drop-shadow(0 0 14px rgba(24, 215, 255, 0.28));
-    }
-
-    .selector-mark::before,
-    .selector-mark::after {
-      position: absolute;
-      top: 3px;
-      width: 13px;
-      height: 22px;
-      content: "";
-      background: linear-gradient(180deg, var(--cyan) 0%, var(--orange) 100%);
-    }
-
-    .selector-mark::before {
-      left: 0;
-      clip-path: polygon(0 0, 100% 28%, 100% 72%, 0 100%);
-    }
-
-    .selector-mark::after {
-      right: 0;
-      clip-path: polygon(100% 0, 0 28%, 0 72%, 100% 100%);
     }
 
     .brand span:last-child {
@@ -1488,7 +1470,7 @@
   <header class="site-header">
     <div class="header-inner shell">
       <a class="brand" href="#top" aria-label="Manifold Research home">
-        <span class="selector-mark" aria-hidden="true"></span>
+        <img class="manifold-mark" src="assets/manifold-logo.svg" alt="" width="29" height="28">
         <span><strong>Manifold</strong> Research</span>
       </a>
       <nav class="header-nav" aria-label="Primary navigation">
