@@ -28,7 +28,7 @@ I built Manifold Studio to separate those roles in practice. Instead of asking
 for one output and accepting it, I could create candidates, compare them,
 preserve constraints, record "more like this" and "less like this," and mutate
 the surviving direction. The public
-[Idea Search artifact](https://eduardo1100.github.io/manifold-studio/) presents
+[Idea Search artifact](https://eduardo1100.github.io/Idea_Search_Showcase/) presents
 that method without exposing the private application.
 
 The system still depended on judgment. That raised a more ambitious question:
